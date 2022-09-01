@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
+import {XMLParser} from 'fast-xml-parser';
+import axios from 'axios';
 import './App.css';
 
-function App() {
+
+async function loadBaseBlocks(filesPath: string) {
+  const files = [ "CubeBlocks", "CubeBlocks_Armor", "CubeBlocks_Armor_2", "CubeBlocks_Automation", "CubeBlocks_Communications", "CubeBlocks_Control", "CubeBlocks_DecorativePack",
+    "CubeBlocks_DecorativePack2", "CubeBlocks_Doors", "CubeBlocks_Economy", "CubeBlocks_Energy", "CubeBlocks_Extras", "CubeBlocks_Frostbite", "CubeBlocks_Gravity", "CubeBlocks_Interiors",
+    "CubeBlocks_LCDPanels", "CubeBlocks_Lights", "CubeBlocks_Logistics", "CubeBlocks_Mechanical", "CubeBlocks_Medical", "CubeBlocks_Production", "CubeBlocks_ScrapRacePack", "CubeBlocks_SparksOfTheFuturePack",
+    "CubeBlocks_Symbols", "CubeBlocks_Thrusters", "CubeBlocks_Tools", "CubeBlocks_Utility", "CubeBlocks_Warfare1", "CubeBlocks_Weapons", "CubeBlocks_Wheels", "CubeBlocks_Windows" ]
+
+  const blocks = [];
+  for (let i = 0; i < files.length; i++){
+    const response = await axios.get(`${filesPath}/${files[i]}.sbc`,{responseType: 'blob', headers: {'Content-Type': 'application/octet-stream'}});
+    const blob = new Blob([response.data], { type: response.headers['content-type'] });
+    const parser = new XMLParser({
+      attributeNamePrefix: '@_',
+      ignoreAttributes: false,
+    });
+    const jsonObj = await parser.parse(await blob.text());
+    if(jsonObj.Definitions) {
+      blocks.push(jsonObj.Definitions.CubeBlocks.Definition);
+    }
+  }
+  return blocks.flat();
+}
+
+export default function App() {
+  const filesPath: string = 'https://organom.github.io/secalculator_nuxt/CubeBlocks';
+  const [baseBlocks, setBaseBlocks] = useState<any[]>([]);
+  const [components, setComponents] = useState<any[]>([]);
+
+  useEffect(() => {
+    loadBaseBlocks(filesPath).then(blocks => {
+      console.log(blocks.length);
+      setBaseBlocks(blocks);
+      setComponents(blocks.map(x => x.Components.Component).flat());
+    });
+  }, [filesPath])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h1 className="title">
+          secalculator
+        </h1>
+        <h2 className="subtitle">
+          Space Engineers calculator
+        </h2>
+        <div className="links">
+          <button className="button--grey">Blueprint</button>
+          <button className="button--grey">Blocks</button>
+          <button className="button--grey">Components</button>
+          <button className="button--grey">GitHub</button>
+        </div>
+        <h2>&nbsp;</h2>
+        <div>Total Blocks loaded: { baseBlocks.length }</div>
+        <div>Total Components loaded: { components.length }</div>
+      </div>
     </div>
   );
 }
-
-export default App;
