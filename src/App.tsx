@@ -30,14 +30,30 @@ export default function App() {
   const filesPath: string = 'https://organom.github.io/secalculator_nuxt/CubeBlocks';
   const [baseBlocks, setBaseBlocks] = useState<any[]>([]);
   const [components, setComponents] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     loadBaseBlocks(filesPath).then(blocks => {
-      console.log(blocks.length);
       setBaseBlocks(blocks);
       setComponents(blocks.map(x => x.Components.Component).flat());
+      setLoading(false);
     });
   }, [filesPath])
+
+  if (loading) {
+    return (
+        <div className="App">
+          <div>
+            <h1 className="title">
+              secalculator
+            </h1>
+            <h2 className="subtitle">
+            Loading...
+            </h2>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="App">
@@ -46,7 +62,7 @@ export default function App() {
           secalculator
         </h1>
         <h2 className="subtitle">
-          Space Engineers calculator
+          Space Engineers Calculator
         </h2>
         <div className="links">
           <button className="button--grey">Blueprint</button>
