@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {XMLParser} from 'fast-xml-parser';
 import axios from 'axios';
-import {Navigate, HashRouter, Route, Routes} from 'react-router-dom';
-import {Navbar,Container, Alert, Spinner, Stack, Button} from 'react-bootstrap';
+import {Link, Navigate, Route, Routes, BrowserRouter} from 'react-router-dom';
+import {Navbar,Container, Alert, Spinner, Stack} from 'react-bootstrap';
 import Blueprint from './views/Blueprint';
 import Blocks from './views/Blocks';
 import Components from './views/Components';
@@ -63,17 +63,17 @@ export default function App() {
 	}
 
 	return (
-		<HashRouter>
+		<BrowserRouter basename="/secalculator">
 			<Navbar bg='dark' variant='dark' fixed='top'>
 				<Container>
 					<Navbar.Brand href='/'>SeCalculator</Navbar.Brand>
 					<Navbar.Toggle />
 					<Navbar.Collapse className='justify-content-end'>
 						<Stack direction='horizontal' gap={3}>
-							<Button href={`/#/blueprint`}>Blueprint</Button>
-							<Button href={`/#/blocks`}>Blocks</Button>
-							<Button href={`/#/components`}>Components</Button>
-							<Button href={`https://github.com/organom/secalculator`}>GitHub</Button>
+							<Link to="blueprint">Blueprint</Link>
+							<Link to='blocks'>Blocks</Link>
+							<Link to='components'>Components</Link>
+							<a href='https://github.com/organom/secalculator'>GitHub</a>
 						</Stack>
 					</Navbar.Collapse>
 				</Container>
@@ -81,13 +81,13 @@ export default function App() {
 			<Alert key='danger' variant='danger' id='ErrorPanel' />
 			<div className='my-auto mt-5'>
 				<Routes>
-					<Route path="/" element={<Stack className="min-vh-100 d-flex justify-content-center align-items-center" direction='vertical' gap={3}><div>Total Blocks loaded: { baseBlocks.length }</div><div>Total Components loaded: { baseComponents.length }</div></Stack>} />
-					<Route path='/blueprint' element={<Blueprint blocks={baseBlocks} components={baseComponents}/>} />
-					<Route path='/blocks' element={<Blocks blocks={baseBlocks}/>} />
-					<Route path='/components' element={<Components components={baseComponents}/>} />
-					<Route path='*' element={<Navigate to="/#/" replace={true}/>} />
+					<Route index element={<Stack className="min-vh-100 d-flex justify-content-center align-items-center" direction='vertical' gap={3}><div>Total Blocks loaded: { baseBlocks.length }</div><div>Total Components loaded: { baseComponents.length }</div></Stack>} />
+					<Route path='blueprint' element={<Blueprint blocks={baseBlocks} components={baseComponents}/>} />
+					<Route path='blocks' element={<Blocks blocks={baseBlocks}/>} />
+					<Route path='components' element={<Components components={baseComponents}/>} />
+					<Route path='*' element={<Navigate to="" replace={true}/>} />
 				</Routes>
 			</div>
-		</HashRouter>
+		</BrowserRouter>
 	);
 }
