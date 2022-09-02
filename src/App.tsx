@@ -3,6 +3,22 @@ import {XMLParser} from 'fast-xml-parser';
 import axios from 'axios';
 import './App.css';
 
+async function downloadAndParseBlockFile(url: string) {
+  const response = await axios.get(url, {
+    responseType: 'blob',
+    headers: {'Content-Type': 'application/octet-stream'}
+  });
+  const blob = new Blob([response.data], {type: response.headers['content-type']});
+  const parser = new XMLParser({
+    attributeNamePrefix: '@_',
+    ignoreAttributes: false,
+  });
+  const jsonObj = await parser.parse(await blob.text());
+  if (jsonObj.Definitions) {
+    return jsonObj.Definitions.CubeBlocks.Definition;
+  }
+  return [];
+}
 
 async function loadBaseBlocks(filesPath: string) {
   const files = [ "CubeBlocks", "CubeBlocks_Armor", "CubeBlocks_Armor_2", "CubeBlocks_Automation", "CubeBlocks_Communications", "CubeBlocks_Control", "CubeBlocks_DecorativePack",
@@ -10,20 +26,9 @@ async function loadBaseBlocks(filesPath: string) {
     "CubeBlocks_LCDPanels", "CubeBlocks_Lights", "CubeBlocks_Logistics", "CubeBlocks_Mechanical", "CubeBlocks_Medical", "CubeBlocks_Production", "CubeBlocks_ScrapRacePack", "CubeBlocks_SparksOfTheFuturePack",
     "CubeBlocks_Symbols", "CubeBlocks_Thrusters", "CubeBlocks_Tools", "CubeBlocks_Utility", "CubeBlocks_Warfare1", "CubeBlocks_Weapons", "CubeBlocks_Wheels", "CubeBlocks_Windows" ]
 
-  const blocks = [];
-  for (let i = 0; i < files.length; i++){
-    const response = await axios.get(`${filesPath}/${files[i]}.sbc`,{responseType: 'blob', headers: {'Content-Type': 'application/octet-stream'}});
-    const blob = new Blob([response.data], { type: response.headers['content-type'] });
-    const parser = new XMLParser({
-      attributeNamePrefix: '@_',
-      ignoreAttributes: false,
-    });
-    const jsonObj = await parser.parse(await blob.text());
-    if(jsonObj.Definitions) {
-      blocks.push(jsonObj.Definitions.CubeBlocks.Definition);
-    }
-  }
-  return blocks.flat();
+  const promises = files.map(file => downloadAndParseBlockFile(`${filesPath}/${file}.sbc`));
+  const results = await Promise.all(promises);
+  return results.flat();
 }
 
 export default function App() {
