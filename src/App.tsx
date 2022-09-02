@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {XMLParser} from 'fast-xml-parser';
 import axios from 'axios';
-import {Link, Navigate, Route, Routes, BrowserRouter} from 'react-router-dom';
+import {Link, Navigate, Route, Routes} from 'react-router-dom';
 import {Navbar,Container, Alert, Spinner, Stack} from 'react-bootstrap';
+import Main from './views/Main';
 import Blueprint from './views/Blueprint';
 import Blocks from './views/Blocks';
 import Components from './views/Components';
@@ -49,45 +50,42 @@ export default function App() {
 		});
 	}, [filesPath])
 
-	if (loading) {
-		return (
-			<div className='App'>
-				<div>
-					<h1 className='title'>
-              secalculator
-					</h1>
-					<Spinner animation="border" /><h2 className="mx-4">Loading...</h2>
-				</div>
-			</div>
-		);
-	}
-
 	return (
-		<BrowserRouter basename="/secalculator">
+		<div>
 			<Navbar bg='dark' variant='dark' fixed='top'>
 				<Container>
-					<Navbar.Brand href='/'>SeCalculator</Navbar.Brand>
+					<Navbar.Brand><Link to="/">SeCalculator</Link></Navbar.Brand>
 					<Navbar.Toggle />
-					<Navbar.Collapse className='justify-content-end'>
-						<Stack direction='horizontal' gap={3}>
-							<Link to="blueprint">Blueprint</Link>
-							<Link to='blocks'>Blocks</Link>
-							<Link to='components'>Components</Link>
-							<a href='https://github.com/organom/secalculator'>GitHub</a>
-						</Stack>
-					</Navbar.Collapse>
+					{ !loading &&
+						<Navbar.Collapse className='justify-content-end'>
+							<Stack direction='horizontal' gap={3}>
+								<Link to="blueprint">Blueprint</Link>
+								<Link to='blocks'>Blocks</Link>
+								<Link to='components'>Components</Link>
+								<a href='https://github.com/organom/secalculator'>GitHub</a>
+							</Stack>
+						</Navbar.Collapse> }
 				</Container>
 			</Navbar>
 			<Alert key='danger' variant='danger' id='ErrorPanel' />
-			<div className='my-auto mt-5'>
-				<Routes>
-					<Route index element={<Stack className="min-vh-100 d-flex justify-content-center align-items-center" direction='vertical' gap={3}><div>Total Blocks loaded: { baseBlocks.length }</div><div>Total Components loaded: { baseComponents.length }</div></Stack>} />
-					<Route path='blueprint' element={<Blueprint blocks={baseBlocks} components={baseComponents}/>} />
-					<Route path='blocks' element={<Blocks blocks={baseBlocks}/>} />
-					<Route path='components' element={<Components components={baseComponents}/>} />
-					<Route path='*' element={<Navigate to="" replace={true}/>} />
-				</Routes>
+			<div className="my-auto mt-5">
+				{ loading
+					?
+					<Container className="d-flex justify-content-center align-items-center">
+						<Stack direction='horizontal'>
+							<Spinner animation="border" /><h2 className="mx-4">Loading...</h2>
+						</Stack>
+					</Container>
+					:
+					<Routes>
+						<Route index element={<Main blocks={baseBlocks} components={baseComponents}/>} />
+						<Route path='blueprint' element={<Blueprint blocks={baseBlocks} components={baseComponents}/>} />
+						<Route path='blocks' element={<Blocks blocks={baseBlocks}/>} />
+						<Route path='components' element={<Components components={baseComponents}/>} />
+						<Route path='*' element={<Navigate to="/"/>} />
+					</Routes>
+				}
 			</div>
-		</BrowserRouter>
+		</div>
 	);
 }

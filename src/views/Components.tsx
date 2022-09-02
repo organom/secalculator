@@ -6,10 +6,8 @@ export default function Components(props: { components: any[] }) {
 	return (
 		<Container>
 			<Link to="/">Back</Link>
-			<Stack direction="vertical" gap={4}>
-				<Stack direction="horizontal" gap={3}>
-					<div>Components</div>
-				</Stack>
+			<Stack direction="vertical" gap={2}>
+				<div>Components</div>
 			</Stack>
 		</Container>
 	);
