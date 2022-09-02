@@ -7,7 +7,7 @@ export default function Components(props: { components: any[] }) {
 		<Container>
 			<Link to="/">Back</Link>
 			<Stack direction="vertical" gap={2}>
-				<div>Components</div>
+				<div>Total Components loaded: {props.components.length}</div>
 			</Stack>
 		</Container>
 	);

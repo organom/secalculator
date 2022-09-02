@@ -62,7 +62,7 @@ export default function App() {
 								<Link to="blueprint">Blueprint</Link>
 								<Link to='blocks'>Blocks</Link>
 								<Link to='components'>Components</Link>
-								<a href='https://github.com/organom/secalculator'>GitHub</a>
+								<a href='https://github.com/organom/secalculator'><i className="bi bi-github me-3"/></a>
 							</Stack>
 						</Navbar.Collapse> }
 				</Container>

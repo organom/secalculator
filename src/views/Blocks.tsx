@@ -1,4 +1,4 @@
-import {Container, Stack} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import React from 'react';
 
@@ -6,9 +6,7 @@ export default function Blocks(props: { blocks: any[] }) {
 	return (
 		<Container>
 			<Link to="/">Back</Link>
-			<Stack direction="vertical" gap={2}>
-				<div>Blocks</div>
-			</Stack>
+			<div>Total Blocks loaded: {props.blocks.length}</div>
 		</Container>
 	);
 }
