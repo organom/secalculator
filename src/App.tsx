@@ -37,7 +37,7 @@ async function loadBaseBlocks(filesPath: string) {
 }
 
 export default function App() {
-	const filesPath: string = 'https://organom.github.io/secalculator_nuxt/CubeBlocks';
+	const filesPath: string = 'https://organom.github.io/secalculator/CubeBlocks';
 	const [baseBlocks, setBaseBlocks] = useState<any[]>([]);
 	const [baseComponents, setBaseComponents] = useState<any[]>([]);
 	const [loading, setLoading] = useState(true);
