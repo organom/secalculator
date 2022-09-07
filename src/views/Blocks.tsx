@@ -17,29 +17,55 @@ export default function Blocks(props: { blocks: any[] }) {
 				   onRowClick={rowData => {
 					   console.log(rowData);
 				   }}>
-				<Column flexGrow={1}>
-					<HeaderCell>DisplayName</HeaderCell>
+				<Column flexGrow={2}>
+					<HeaderCell>Name</HeaderCell>
 					<Cell dataKey="DisplayName" />
 				</Column>
 				<Column align={'center'}>
-					<HeaderCell>CubeSize</HeaderCell>
+					<HeaderCell>Size</HeaderCell>
 					<Cell dataKey="CubeSize" />
 				</Column>
 				<Column flexGrow={1}>
 					<HeaderCell>Type</HeaderCell>
 					<Cell dataKey="Id.TypeId" />
 				</Column>
+				<Column flexGrow={1}>
+					<HeaderCell>Subtype</HeaderCell>
+					<Cell dataKey="Id.SubtypeId" />
+				</Column>
 				<Column align={'center'} resizable>
 					<HeaderCell>PCU</HeaderCell>
 					<Cell dataKey="PCU" />
 				</Column>
 				<Column align={'center'} resizable>
-					<HeaderCell>BuildTimeSeconds</HeaderCell>
+					<HeaderCell>Build(sec)</HeaderCell>
 					<Cell dataKey="BuildTimeSeconds" />
 				</Column>
 				<Column align={'center'} resizable>
-					<HeaderCell>RequiredPowerInput</HeaderCell>
+					<HeaderCell>Power</HeaderCell>
 					<Cell dataKey="RequiredPowerInput" />
+				</Column>
+				<Column align={'center'} resizable>
+					<HeaderCell>Pressurized</HeaderCell>
+					<Cell>
+						{rowData => ( <span>{rowData.IsPressurized ? 'Yes' : 'No'}</span> )}
+					</Cell>
+				</Column>
+				<Column align={'center'} resizable>
+					<HeaderCell>AirTight</HeaderCell>
+					<Cell>
+						{rowData => ( <span>{rowData.IsAirTight ? 'Yes' : 'No'}</span> )}
+					</Cell>
+				</Column>
+				<Column align={'center'} resizable>
+					<HeaderCell>Public</HeaderCell>
+					<Cell>
+						{rowData => ( <span>{rowData.Public ? 'Yes' : 'No'}</span> )}
+					</Cell>
+				</Column>
+				<Column align={'center'} resizable>
+					<HeaderCell>DLC</HeaderCell>
+					<Cell dataKey="DLC" />
 				</Column>
 			</Table>
 		</Container>
