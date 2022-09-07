@@ -17,15 +17,15 @@ export default function Blocks(props: { blocks: any[] }) {
 				   onRowClick={rowData => {
 					   console.log(rowData);
 				   }}>
-				<Column flexGrow={1} resizable>
+				<Column flexGrow={1}>
 					<HeaderCell>DisplayName</HeaderCell>
 					<Cell dataKey="DisplayName" />
 				</Column>
-				<Column align={'center'} resizable>
+				<Column align={'center'}>
 					<HeaderCell>CubeSize</HeaderCell>
 					<Cell dataKey="CubeSize" />
 				</Column>
-				<Column flexGrow={1} resizable>
+				<Column flexGrow={1}>
 					<HeaderCell>Type</HeaderCell>
 					<Cell dataKey="Id.TypeId" />
 				</Column>

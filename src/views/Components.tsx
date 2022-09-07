@@ -1,4 +1,4 @@
-import {Container, Stack} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import React from 'react';
 
@@ -17,12 +17,12 @@ export default function Components(props: { components: any[] }) {
 				   onRowClick={rowData => {
 					   console.log(rowData);
 				   }}>
-				<Column flexGrow={1} resizable>
+				<Column resizable={true}>
 					<HeaderCell>Code</HeaderCell>
 					<Cell dataKey="Code" />
 				</Column>
 
-				<Column flexGrow={2} resizable>
+				<Column resizable={true}>
 					<HeaderCell>Display Name</HeaderCell>
 					<Cell dataKey="DisplayName" />
 				</Column>
