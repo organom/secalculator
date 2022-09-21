@@ -19,10 +19,7 @@ async function downloadAndParseBlockFile(url: string) {
 		ignoreAttributes: false,
 	});
 	const jsonObj = await parser.parse(await blob.text());
-	if (jsonObj.Definitions) {
-		return jsonObj.Definitions.CubeBlocks.Definition;
-	}
-	return [];
+	return jsonObj.Definitions ? jsonObj.Definitions.CubeBlocks.Definition : [];
 }
 
 async function loadBaseBlocks(filesPath: string) {
@@ -39,37 +36,44 @@ async function loadBaseBlocks(filesPath: string) {
 
 export default function App() {
 	const filesPath: string = 'https://organom.github.io/secalculator/cubeblocks';
-	const [baseBlocks, setBaseBlocks] = useState<any[]>([]);
-	const [baseComponents, setBaseComponents] = useState<any[]>([]);
+	const [blocks, setBlocks] = useState<any[]>([]);
+	const [components, setComponents] = useState<any[]>([]);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		loadBaseBlocks(filesPath).then(blocks => {
-			setBaseBlocks(blocks);
-			setBaseComponents(blocks.map(x => x.Components.Component).flat());
+			setBlocks(blocks);
+			const components = blocks.map(x => x.Components.Component).flat();
+			const uniqueComponents = [...new Set(components.map(t => t['@_Subtype']))];
+			setComponents(uniqueComponents.map(t => {
+				return {
+					Code: t,
+					DisplayName: t.replace(/([A-Z])/g, ' $1')
+				};
+			}));
 			setLoading(false);
 		});
 	}, [filesPath])
 
 	return (
 		<div>
-			<Navbar bg='dark' variant='dark' fixed='top'>
-				<Container>
-					<Navbar.Brand><Link to="/">SeCalculator</Link></Navbar.Brand>
-					<Navbar.Toggle />
-					{ !loading &&
-						<Navbar.Collapse className='justify-content-end'>
-							<Stack direction='horizontal' gap={3}>
-								<Link to="blueprint">Blueprint</Link>
-								<Link to='blocks'>Blocks</Link>
-								<Link to='components'>Components</Link>
-								<a href='https://github.com/organom/secalculator'><i className="bi bi-github me-3"/></a>
-							</Stack>
-						</Navbar.Collapse> }
-				</Container>
+			<Navbar bg='dark' variant='dark' fixed='top' className="ps-3">
+				<Navbar.Brand><Link to="/">SeCalculator</Link></Navbar.Brand>
+				<Navbar.Toggle />
+				{ !loading &&
+					<Navbar.Collapse className='justify-content-end'>
+						<Stack direction='horizontal' gap={3}>
+							<div className="text-light">Blocks: {blocks.length}</div>
+							<div className="text-light ">Components: {components.length}</div>
+							<Link to="blueprint">Blueprint</Link>
+							<Link to='blocks'>Blocks</Link>
+							<Link to='components'>Components</Link>
+							<a href='https://github.com/organom/secalculator'><i className="bi bi-github me-3"/></a>
+						</Stack>
+					</Navbar.Collapse> }
 			</Navbar>
 			<Alert key='danger' variant='danger' id='ErrorPanel' />
-			<div className="my-auto mt-5">
+			<div className="my-auto mt-5 ms-3 me-3 mb-3">
 				{ loading
 					?
 					<Container className="d-flex justify-content-center align-items-center">
@@ -79,10 +83,10 @@ export default function App() {
 					</Container>
 					:
 					<Routes>
-						<Route index element={<Main blocks={baseBlocks} components={baseComponents}/>} />
-						<Route path='blueprint' element={<Blueprint blocks={baseBlocks} components={baseComponents}/>} />
-						<Route path='blocks' element={<Blocks blocks={baseBlocks}/>} />
-						<Route path='components' element={<Components components={baseComponents}/>} />
+						<Route index element={<Main blocks={blocks} components={components}/>} />
+						<Route path='blueprint' element={<Blueprint blocks={blocks} components={components}/>} />
+						<Route path='blocks' element={<Blocks blocks={blocks}/>} />
+						<Route path='components' element={<Components components={components}/>} />
 						<Route path='*' element={<Navigate to="/"/>} />
 					</Routes>
 				}
