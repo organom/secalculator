@@ -1,5 +1,5 @@
 # secalculator
-[![CodeQL](https://github.com/organom/secalculator/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/organom/secalculator/actions/workflows/codeql-analysis.yml) 
+[![CodeQL](https://github.com/organom/secalculator/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/organom/secalculator/actions/workflows/codeql-analysis.yml) [![GHPages](https://github.com/organom/secalculator/actions/workflows/ghpages.yml/badge.svg)](https://github.com/organom/secalculator/actions/workflows/ghpages.yml)
 
 ## Getting Started with Create React App
 
