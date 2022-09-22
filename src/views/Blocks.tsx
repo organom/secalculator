@@ -36,8 +36,6 @@ export default function Blocks(props: { blocks: any[] }) {
 		}, 10);
 	}
 
-
-
 	return (
 		<div>
 			<Link to="/">Back</Link>
@@ -53,7 +51,7 @@ export default function Blocks(props: { blocks: any[] }) {
 				   onRowClick={rowData => {
 					   console.log(rowData);
 				   }}>
-				<Column resizable sortable>
+				<Column width={550} resizable sortable>
 					<HeaderCell>Name</HeaderCell>
 					<Cell dataKey="DisplayName" />
 				</Column>
@@ -61,15 +59,15 @@ export default function Blocks(props: { blocks: any[] }) {
 					<HeaderCell>Size</HeaderCell>
 					<Cell dataKey="CubeSize" />
 				</Column>
-				<Column resizable sortable>
+				<Column width={250} resizable sortable>
 					<HeaderCell>Type</HeaderCell>
 					<Cell dataKey="Id.TypeId" />
 				</Column>
-				<Column resizable sortable>
+				<Column width={300} resizable sortable>
 					<HeaderCell>Subtype</HeaderCell>
 					<Cell dataKey="Id.SubtypeId" />
 				</Column>
-				<Column align={'center'} resizable sortable>
+				<Column width={65} align={'center'} resizable sortable>
 					<HeaderCell>PCU</HeaderCell>
 					<Cell dataKey="PCU" />
 				</Column>
@@ -77,29 +75,23 @@ export default function Blocks(props: { blocks: any[] }) {
 					<HeaderCell>Build(sec)</HeaderCell>
 					<Cell dataKey="BuildTimeSeconds" />
 				</Column>
-				<Column align={'center'} resizable sortable>
+				<Column width={65} align={'center'} resizable sortable>
 					<HeaderCell>Power</HeaderCell>
 					<Cell dataKey="RequiredPowerInput" />
 				</Column>
-				<Column align={'center'} resizable sortable>
+				<Column width={65} align={'center'} resizable sortable>
 					<HeaderCell>Pressurized</HeaderCell>
 					<Cell>
 						{rowData => ( <span>{rowData.IsPressurized ? 'Yes' : 'No'}</span> )}
 					</Cell>
 				</Column>
-				<Column align={'center'} resizable sortable>
+				<Column width={65} align={'center'} resizable sortable>
 					<HeaderCell>AirTight</HeaderCell>
 					<Cell>
 						{rowData => ( <span>{rowData.IsAirTight ? 'Yes' : 'No'}</span> )}
 					</Cell>
 				</Column>
-				<Column align={'center'} resizable sortable>
-					<HeaderCell>Public</HeaderCell>
-					<Cell>
-						{rowData => ( <span>{rowData.Public ? 'Yes' : 'No'}</span> )}
-					</Cell>
-				</Column>
-				<Column align={'center'} resizable sortable>
+				<Column width={150} align={'center'} resizable sortable>
 					<HeaderCell>DLC</HeaderCell>
 					<Cell dataKey="DLC" />
 				</Column>
