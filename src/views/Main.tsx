@@ -1,4 +1,4 @@
-import {Container, Stack} from 'react-bootstrap';
+import {Stack} from 'react-bootstrap';
 import React from 'react';
 
 export default function Main(props: { blocks: any[], components: any[] }) {
