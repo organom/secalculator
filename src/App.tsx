@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {XMLParser} from 'fast-xml-parser';
 import axios from 'axios';
 import {Link, Navigate, Route, Routes} from 'react-router-dom';
 import {Navbar,Container, Alert, Spinner, Stack} from 'react-bootstrap';
@@ -7,6 +6,7 @@ import Main from './views/Main';
 import Blueprint from './views/Blueprint';
 import Blocks from './views/Blocks';
 import Components from './views/Components';
+import {parseSBCFile} from './Helpers';
 
 async function downloadAndParseBlockFile(url: string) {
 	const response = await axios.get(url, {
@@ -14,12 +14,8 @@ async function downloadAndParseBlockFile(url: string) {
 		headers: {'Content-Type': 'application/octet-stream'}
 	});
 	const blob = new Blob([response.data], {type: response.headers['content-type']});
-	const parser = new XMLParser({
-		attributeNamePrefix: '@_',
-		ignoreAttributes: false,
-	});
-	const jsonObj = await parser.parse(await blob.text());
-	return jsonObj.Definitions ? jsonObj.Definitions.CubeBlocks.Definition : [];
+	const parsedContent = await parseSBCFile(blob);
+	return parsedContent.CubeBlocks.Definition || [];
 }
 
 async function loadBaseBlocks(filesPath: string) {

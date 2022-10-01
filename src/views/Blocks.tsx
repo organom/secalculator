@@ -1,4 +1,3 @@
-import {Link} from 'react-router-dom';
 import React, {useState} from 'react';
 
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
@@ -38,7 +37,6 @@ export default function Blocks(props: { blocks: any[] }) {
 
 	return (
 		<div>
-			<Link to="/">Back</Link>
 			<div className="mb-3">Total Blocks loaded: {props.blocks.length}</div>
 			<Table virtualized
 				   bordered
@@ -51,22 +49,20 @@ export default function Blocks(props: { blocks: any[] }) {
 				   onRowClick={rowData => {
 					   console.log(rowData);
 				   }}>
-				<Column width={550} resizable sortable>
-					<HeaderCell>Name</HeaderCell>
-					<Cell dataKey="DisplayName" />
-				</Column>
-				<Column align={'center'} resizable sortable>
-					<HeaderCell>Size</HeaderCell>
-					<Cell dataKey="CubeSize" />
+
+				<Column width={450} resizable sortable>
+					<HeaderCell>Subtype</HeaderCell>
+					<Cell dataKey="Id.SubtypeId" />
 				</Column>
 				<Column width={250} resizable sortable>
 					<HeaderCell>Type</HeaderCell>
 					<Cell dataKey="Id.TypeId" />
 				</Column>
-				<Column width={300} resizable sortable>
-					<HeaderCell>Subtype</HeaderCell>
-					<Cell dataKey="Id.SubtypeId" />
+				<Column align={'center'} resizable sortable>
+					<HeaderCell>Size</HeaderCell>
+					<Cell dataKey="CubeSize" />
 				</Column>
+
 				<Column width={65} align={'center'} resizable sortable>
 					<HeaderCell>PCU</HeaderCell>
 					<Cell dataKey="PCU" />

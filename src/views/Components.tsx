@@ -1,4 +1,3 @@
-import {Link} from 'react-router-dom';
 import React, {useState} from 'react';
 
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
@@ -39,7 +38,6 @@ export default function Components(props: { components: any[] }) {
 
 	return (
 		<div>
-			<Link to="/">Back</Link>
 			<div className="mb-3">Total Components loaded: {props.components.length}</div>
 			<Table virtualized
 				   bordered
