@@ -79,7 +79,7 @@ export default function App() {
 					</Container>
 					:
 					<Routes>
-						<Route index element={<Main blocks={blocks} components={components}/>} />
+						<Route index element={<Blueprint blocks={blocks} components={components}/>} />
 						<Route path='blueprint' element={<Blueprint blocks={blocks} components={components}/>} />
 						<Route path='blocks' element={<Blocks blocks={blocks}/>} />
 						<Route path='components' element={<Components components={components}/>} />
