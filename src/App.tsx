@@ -34,7 +34,7 @@ async function loadBaseBlocks(filesPath: string) {
 		'CubeBlocks_DisplayCase', 'CubeBlocks_Refinery', 'CubeBlocks_Drill', 'CubeBlocks_RotaryDoor', 'CubeBlocks_Economy', 'CubeBlocks_SmallConveyors', 'CubeBlocks_Grinder', 'CubeBlocks_SolarPanel',
 		'CubeBlocks_Gyroscope', 'CubeBlocks_Spotlight', 'CubeBlocks_HydrogenEngine', 'CubeBlocks_StoneIncinerator', 'CubeBlocks_HydrogenTank', 'CubeBlocks_Tools', 'CubeBlocks_HydrogenThruster',
 		'CubeBlocks_Tools_ShipGrinder', 'CubeBlocks_IndustrialPack', 'CubeBlocks_Tools_SmallBlockDrill', 'CubeBlocks_IonThruster', 'CubeBlocks_Warfare2_2', 'CubeBlocks_IonThrusterSciFi', 'CubeBlocks_Warfare2',
-		'CubeBlocks_JumpDrive', 'CubeBlocks_Weapons_2', 'CubeBlocks_LargeConveryors', 'CubeBlocks_Weapons', 'CubeBlocks_Logistics', 'CubeBlocks_WindTurbine', 'CubeBlocks_MorePassages_Passage2', 'FASNR_CubeBlocks',
+		'CubeBlocks_JumpDrive', 'CubeBlocks_Weapons_2', 'CubeBlocks_LargeConveyors', 'CubeBlocks_Weapons', 'CubeBlocks_Logistics', 'CubeBlocks_WindTurbine', 'CubeBlocks_MorePassages_Passage2', 'FASNR_CubeBlocks',
 		'CubeBlocks_MorePassages_Passage3', 'MA_Buster_Cubeblocks', 'CubeBlocks_MorePassages_Passage3Enc', 'MA_HeavyBridge_CubeBlocks', 'CubeBlocks_MorePassages_Passage3EncLight', 'ZardosConnector_CubeBlocks',
 		'CubeBlocks_MorePassages_Passage3EncOffset' ];
 	const promises = skunkWorksFiles.map(file => downloadAndParseBlockFile(`${filesPath}/SkunkWorks/${file}.sbc`));
