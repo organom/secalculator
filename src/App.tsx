@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link, Navigate, Route, Routes} from 'react-router-dom';
 import {Navbar,Container, Alert, Spinner, Stack} from 'react-bootstrap';
-import Main from './views/Main';
 import Blueprint from './views/Blueprint';
 import Blocks from './views/Blocks';
 import Components from './views/Components';
@@ -19,13 +18,27 @@ async function downloadAndParseBlockFile(url: string) {
 }
 
 async function loadBaseBlocks(filesPath: string) {
-	const files = [ 'CubeBlocks', 'CubeBlocks_Armor', 'CubeBlocks_Armor_2', 'CubeBlocks_Automation', 'CubeBlocks_Communications', 'CubeBlocks_Control', 'CubeBlocks_DecorativePack',
+	/*
+	const vanillaFiles = [ 'CubeBlocks', 'CubeBlocks_Armor', 'CubeBlocks_Armor_2', 'CubeBlocks_Automation', 'CubeBlocks_Communications', 'CubeBlocks_Control', 'CubeBlocks_DecorativePack',
 		'CubeBlocks_DecorativePack2', 'CubeBlocks_Doors', 'CubeBlocks_Economy', 'CubeBlocks_Energy', 'CubeBlocks_Extras', 'CubeBlocks_Frostbite', 'CubeBlocks_Gravity', 'CubeBlocks_Interiors',
 		'CubeBlocks_LCDPanels', 'CubeBlocks_Lights', 'CubeBlocks_Logistics', 'CubeBlocks_Mechanical', 'CubeBlocks_Medical', 'CubeBlocks_Production', 'CubeBlocks_ScrapRacePack',
 		'CubeBlocks_SparksOfTheFuturePack', 'CubeBlocks_Symbols', 'CubeBlocks_Thrusters', 'CubeBlocks_Tools', 'CubeBlocks_Utility', 'CubeBlocks_Warfare1', 'CubeBlocks_Weapons', 'CubeBlocks_Wheels',
 		'CubeBlocks_Windows', 'CubeBlocks_ArmorPanels', 'CubeBlocks_Armor_3', 'CubeBlocks_IndustrialPack', 'CubeBlocks_Warfare2']
+	const promises = vanillaFiles.map(file => downloadAndParseBlockFile(`${filesPath}/Vanilla/${file}.sbc`));
+	*/
 
-	const promises = files.map(file => downloadAndParseBlockFile(`${filesPath}/${file}.sbc`));
+	const skunkWorksFiles = [ 'Aryx_AWE_CubeBlocks', 'CubeBlocks_MorePassages_PassageLux', 'CubeBlocks_Assembler', 'CubeBlocks_OxygenGenerator', 'CubeBlocks_AtmosphericThruster',
+		'CubeBlocks_PassageIntersections_Expansion', 'CubeBlocks_AtmosphericThrusterSciFi', 'CubeBlocks_PassageIntersections_HalfPassageExpansion', 'CubeBlocks_Battery',
+		'CubeBlocks_PassageIntersections_HalfPassages', 'CubeBlocks_Beacon', 'CubeBlocks_PassageIntersections_Lighted', 'CubeBlocks_CargoContainerLarge', 'CubeBlocks_PassageIntersections_LightedHalfPassages',
+		'CubeBlocks_CargoContainerMedium', 'CubeBlocks_PassageIntersections_Passage', 'CubeBlocks_CargoContainerSmall', 'CubeBlocks_Reactor', 'CubeBlocks_Detector', 'CubeBlocks_RebelsGates',
+		'CubeBlocks_DisplayCase', 'CubeBlocks_Refinery', 'CubeBlocks_Drill', 'CubeBlocks_RotaryDoor', 'CubeBlocks_Economy', 'CubeBlocks_SmallConveyors', 'CubeBlocks_Grinder', 'CubeBlocks_SolarPanel',
+		'CubeBlocks_Gyroscope', 'CubeBlocks_Spotlight', 'CubeBlocks_HydrogenEngine', 'CubeBlocks_StoneIncinerator', 'CubeBlocks_HydrogenTank', 'CubeBlocks_Tools', 'CubeBlocks_HydrogenThruster',
+		'CubeBlocks_Tools_ShipGrinder', 'CubeBlocks_IndustrialPack', 'CubeBlocks_Tools_SmallBlockDrill', 'CubeBlocks_IonThruster', 'CubeBlocks_Warfare2_2', 'CubeBlocks_IonThrusterSciFi', 'CubeBlocks_Warfare2',
+		'CubeBlocks_JumpDrive', 'CubeBlocks_Weapons_2', 'CubeBlocks_LargeConveryors', 'CubeBlocks_Weapons', 'CubeBlocks_Logistics', 'CubeBlocks_WindTurbine', 'CubeBlocks_MorePassages_Passage2', 'FASNR_CubeBlocks',
+		'CubeBlocks_MorePassages_Passage3', 'MA_Buster_Cubeblocks', 'CubeBlocks_MorePassages_Passage3Enc', 'MA_HeavyBridge_CubeBlocks', 'CubeBlocks_MorePassages_Passage3EncLight', 'ZardosConnector_CubeBlocks',
+		'CubeBlocks_MorePassages_Passage3EncOffset' ];
+	const promises = skunkWorksFiles.map(file => downloadAndParseBlockFile(`${filesPath}/SkunkWorks/${file}.sbc`));
+
 	const results = await Promise.all(promises);
 	return results.flat();
 }
