@@ -4,7 +4,7 @@ import ReactDataGrid from '@inovua/reactdatagrid-community'
 import '@inovua/reactdatagrid-community/index.css'
 
 export default function Components(props: { components: any[] }) {
-	const [loading, setLoading] = useState<boolean>(false);
+	//const [loading, setLoading] = useState<boolean>(false);
 
 	const columns = [
 		{ name: 'Code', header: 'Code', minWidth: 20, defaultFlex: 1 },
@@ -22,7 +22,7 @@ export default function Components(props: { components: any[] }) {
 				style={gridStyle}
 				allowUnsort={false}
 				editable={true}
-				loading={loading}
+		//		loading={loading}
 			/>
 		</div>
 	);

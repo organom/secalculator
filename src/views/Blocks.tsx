@@ -9,7 +9,7 @@ import {TypeColumn} from '@inovua/reactdatagrid-community/types/TypeColumn';
 import {TypeFilterValue} from '@inovua/reactdatagrid-community/types/TypeFilterValue';
 
 export default function Blocks(props: { blocks: any[] }) {
-	const [loading, setLoading] = useState<boolean>(false);
+	//const [loading, setLoading] = useState<boolean>(false);
 
 	const gridStyle = { minHeight: 700 }
 	const columns: TypeColumn[] = [
@@ -45,7 +45,7 @@ export default function Blocks(props: { blocks: any[] }) {
 				style={gridStyle}
 				allowUnsort={false}
 				editable={true}
-				loading={loading}
+			//	loading={loading}
 				defaultFilterValue={filterValue}
 			/>
 		</div>
