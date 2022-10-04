@@ -6,8 +6,8 @@ export default function Blueprint(props: { blocks: any[], components: any[] }) {
 
 	const [blueprintFileName, setBlueprintFileName] = useState<string | undefined>();
 	const [blueprint, setBlueprint] = useState<any>();
-	const [blocks, setBlocks] = useState<{block: string, count: number}[]>([]);
-	const [components, setComponents] = useState<{component: string, count:number}[]>([]);
+	const [blueprintBlocks, setBlueprintBlocks] = useState<{block: string, count: number}[]>([]);
+	const [blueprintComponents, setBlueprintComponents] = useState<{component: string, count:number}[]>([]);
 
 	const inputRef = useRef<HTMLInputElement>(null);
 
@@ -30,16 +30,17 @@ export default function Blueprint(props: { blocks: any[], components: any[] }) {
 		console.log(parsedContent.ShipBlueprints.ShipBlueprint);
 
 		const blockCount = getBlockCount(parsedContent.ShipBlueprints.ShipBlueprint.CubeGrids.CubeGrid.CubeBlocks.MyObjectBuilder_CubeBlock);
-		setBlocks(blockCount);
+		setBlueprintBlocks(blockCount);
 
 		const componentCount = getComponentsCount(blockCount);
-		setComponents(componentCount);
+		setBlueprintComponents(componentCount);
 	}
 
 	function getBlockCount(cubeBlocks: any) {
 		const groupdByType = groupBy(cubeBlocks, (x: any) => x.SubtypeName)
 
 		return Object.keys(groupdByType).map((key) => {
+			if(!key) console.log(groupdByType[key]);
 			return {block: key, count: groupdByType[key].length}
 		})
 	}
@@ -79,11 +80,11 @@ export default function Blueprint(props: { blocks: any[], components: any[] }) {
 						<Stack direction={'horizontal'} gap={5} className="mt-4 align-items-md-start">
 							<div>
 								<h4>Blocks:</h4>
-								{ blocks.map(block => <div>{block.count} x {block.block}</div>) }
+								{ blueprintBlocks.map(block => <div>{block.count} x {block.block}</div>) }
 							</div>
 							<div>
 								<h4>Components required:</h4>
-								{ components.map(comp => <div>{comp.count} x {comp.component}</div>) }
+								{ blueprintComponents.map(comp => <div>{comp.count} x {comp.component}</div>) }
 							</div>
 						</Stack>
 					</Stack>
