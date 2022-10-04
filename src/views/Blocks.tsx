@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import ReactDataGrid from '@inovua/reactdatagrid-community'
 import '@inovua/reactdatagrid-community/index.css'
@@ -45,7 +45,7 @@ export default function Blocks(props: { blocks: any[] }) {
 				style={gridStyle}
 				allowUnsort={false}
 				editable={true}
-			//	loading={loading}
+				//	loading={loading}
 				defaultFilterValue={filterValue}
 			/>
 		</div>
