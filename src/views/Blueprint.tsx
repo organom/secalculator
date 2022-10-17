@@ -112,7 +112,7 @@ export default function Blueprint(props: { blocks: any[], components: any[] }) {
 					{blueprintGrids.map(grid =>
 						<div key={grid.EntityId}>
 							<hr/>
-							<div><b>ID:</b>{grid.DisplayName} ({grid.EntityId})</div>
+							<div><b>ID:</b> {grid.DisplayName} ({grid.EntityId})</div>
 							<div><b>Size:</b> {grid.GridSizeEnum}</div>
 							<Stack direction={'horizontal'} gap={5} className="mt-4 align-items-md-start">
 								<div>

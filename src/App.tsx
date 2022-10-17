@@ -173,6 +173,12 @@ const skunkWorksModsConfig: { id: string; name: string, cubeBlockFiles: string[]
 		name: 'MA HeavyBridge',
 		componentFiles: [],
 		cubeBlockFiles:	['MA_HeavyBridge_CubeBlocks']
+	},
+	{
+		id: '1365616918',
+		name: 'Defense Shields - v2.0(38)',
+		componentFiles: ['CompBlueprint'],
+		cubeBlockFiles:	['BlocksCategories']
 	}
 ];
 
