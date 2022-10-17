@@ -139,12 +139,6 @@ const skunkWorksModsConfig: { id: string; name: string, cubeBlockFiles: string[]
 		cubeBlockFiles:	['AVTECH_Interface']
 	},
 	{
-		id: '2494377866',
-		name: 'Store Block - Create your own Trade Station',
-		componentFiles: ['Components'],
-		cubeBlockFiles:	['CubeBlocks/CubeBlocks_Economy']
-	},
-	{
 		id: '1962611090',
 		name: 'First Aid Station (No Respawn)',
 		componentFiles: [],
