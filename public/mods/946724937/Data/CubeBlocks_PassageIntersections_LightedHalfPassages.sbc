@@ -1,0 +1,2066 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+	
+<!--Half Lighted Passage-->
+
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageL_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Half Passage</DisplayName>
+		<Icon>Textures\Icons\HalfPassageLighted.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassage.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="55" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0" StartY=".85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0.75" EndX="1" EndY="1" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassage_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassage_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassage_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageL</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageLEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Enclosed Half Passage</DisplayName>
+		<Icon>Textures\Icons\HalfPassageEncLight.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassageEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="55" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0" StartY=".85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassageEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassageEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassageEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageLEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassageTopL_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Passage Extention</DisplayName>
+		<Icon>Textures\Icons\PassageTopLighted.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassageTop.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" Default="true"/>
+			<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassageTop_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassageTop_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassageTop_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassageTopL</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageGlassL_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Half Passage Window</DisplayName>
+		<Icon>Textures\Icons\HalfPassageGlassLighted.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassageGlass.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="43" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="BulletproofGlass" Count="4" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Back" StartX="0" StartY=".85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="0.25" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassageGlass_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassageGlass_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassageGlass_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageGlassL</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageGlassLEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Enclosed Half Passage Window</DisplayName>
+		<Icon>Textures\Icons\HalfPassageGlassEncLighted.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassageGlassEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="43" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="BulletproofGlass" Count="4" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Back" StartX="0" StartY=".85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassageGlassEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassageGlassEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassageGlassEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageGlassLEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassageTopLEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Enclosed Passage Extention</DisplayName>
+		<Icon>Textures\Icons\PassageTopEncLighted.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassageTopEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="0.01"/>
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="0.01" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="0.01" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="0.01" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassageTopEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassageTopEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassageTopEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassageTopLEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageCornerL_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Half Passage Corner</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCornerLighted.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassageCorner.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassageCorner_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassageCorner_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassageCorner_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCornerL</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageCornerLEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Half Passage Corner</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCornerEncLighted.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassageCornerEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassageCornerEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassageCornerEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassageCornerEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCornerLEnc</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassagePillarLL_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Half Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\HalfPassagePillarLL.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassagePillarL.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Bottom" StartX="0.75" StartY="0" EndX="1" EndY="0.25" Default="true"/>
+			<MountPoint Side="Bottom" StartX="0" StartY="0.75" EndX="1" EndY="1" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassagePillarL_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassagePillarL_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassagePillarL_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassagePillarLL</BlockPairName>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassagePillarLLEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Half Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\HalfPassagePillarLLEnc.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassagePillarLEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassagePillarLEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassagePillarLEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassagePillarLEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassagePillarLLEnc</BlockPairName>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassagePillarRL_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Half Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\HalfPassagePillarRL.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassagePillarR.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Front" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="0.25" EndY="0.25" Default="true"/>
+			<MountPoint Side="Bottom" StartX="0" StartY="0.75" EndX="1" EndY="1" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassagePillarR_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassagePillarR_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassagePillarR_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassagePillarRL</BlockPairName>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassagePillarRLEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Half Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\HalfPassagePillarRLEnc.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassagePillarREnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Front" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassagePillarREnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassagePillarREnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassagePillarREnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassagePillarRLEnc</BlockPairName>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillarL_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillarL.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="0.25" EndY="0.25" Default="true"/>
+			<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillarL</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillarLEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillarLEnc.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillarEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true"/>
+			<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillarEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillarEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillarEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillarLEnc</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar2L_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar2L.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar2.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="1" 	EndY="1"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="0" 		EndX="0.25"	EndY="0.25" Default="true"/>
+			<MountPoint Side="Bottom" 	StartX="0.75"	StartY="0"		EndX="1" 	EndY="0.25" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1"/>
+			<MountPoint Side="Front" 	StartX="0"		StartY="0"		EndX="0.25"	EndY="0.85" />
+			<MountPoint Side="Front" 	StartX="0.75" 	StartY="0"		EndX="1" 	EndY="0.85" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="0.85"	EndX="1"	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0" 		EndX="0.25"	EndY="0.85" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Right" 	StartX="0.75"	StartY="0"	 	EndX="1"	EndY="0.85"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar2_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar2_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar2_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar2L</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar2oL_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar2oL.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar2o.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="1" 	EndY="1"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="0" 		EndX="0.25"	EndY="0.25" Default="true"/>
+			<MountPoint Side="Bottom" 	StartX="0.75"	StartY="0.75"	EndX="1" 	EndY="1" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1"/>
+			<MountPoint Side="Back" 	StartX="0.75"	StartY="0"	 	EndX="1" 	EndY="0.85"/>
+			<MountPoint Side="Front" 	StartX="0.75" 	StartY="0"		EndX="1" 	EndY="0.85" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="0.85"	EndX="1"	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0" 		EndX="0.25"	EndY="0.85" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0"	 	EndX="0.25"	EndY="0.85"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar2o_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar2o_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar2o_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar2oL</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar3L_Large</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar3L.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar3.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="1" 	EndY="1"/>
+			<MountPoint Side="Bottom" 	StartX="0.75"	StartY="0" 		EndX="1" 	EndY="0.25" Default="true"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="0.75"	EndX="0.25"	EndY="1" Default="true"/>
+			<MountPoint Side="Bottom" 	StartX="0.75"	StartY="0.75"	EndX="1" 	EndY="1" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="0"	 	EndX="0.25"	EndY="0.85"/>
+			<MountPoint Side="Back" 	StartX="0.75" 	StartY="0"	 	EndX="1"	EndY="0.85"/>
+			<MountPoint Side="Back" 	StartX="0"	 	StartY="0.85"	EndX="1"	EndY="1"/>
+			<MountPoint Side="Front" 	StartX="0"	 	StartY="0" 		EndX="0.25"	EndY="0.85" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0.75"	StartY="0" 		EndX="1"	EndY="0.85" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0"	 	EndX="0.25"	EndY="0.85"/>
+			<MountPoint Side="Right" 	StartX="0.75" 	StartY="0"	 	EndX="1"	EndY="0.85"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar3_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar3_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar3_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar3L</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar2LEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar2LEnc.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar2Enc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="1" 	EndY="1"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="0" 		EndX="1"	EndY="1" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1"/>
+			<MountPoint Side="Front" 	StartX="0"		StartY="0"		EndX="0.25"	EndY="0.85" />
+			<MountPoint Side="Front" 	StartX="0.75" 	StartY="0"		EndX="1" 	EndY="0.85" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="0.85"	EndX="1"	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0" 		EndX="0.25"	EndY="0.85" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Right" 	StartX="0.75"	StartY="0"	 	EndX="1"	EndY="0.85"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar2Enc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar2Enc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar2Enc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar2LEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar2oLEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar2oLEnc.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar2oEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="1" 	EndY="1"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="0" 		EndX="1"	EndY="1" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1"/>
+			<MountPoint Side="Back" 	StartX="0.75"	StartY="0"	 	EndX="1" 	EndY="0.85"/>
+			<MountPoint Side="Front" 	StartX="0.75" 	StartY="0"		EndX="1" 	EndY="0.85" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="0.85"	EndX="1"	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0" 		EndX="0.25"	EndY="0.85" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0"	 	EndX="0.25"	EndY="0.85"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar2oEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar2oEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar2oEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar2oLEnc</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar3LEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar3LEnc.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar3Enc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="1" 	EndY="1"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="0" 		EndX="1" 	EndY="1" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="0"	 	EndX="0.25"	EndY="0.85"/>
+			<MountPoint Side="Back" 	StartX="0.75" 	StartY="0"	 	EndX="1"	EndY="0.85"/>
+			<MountPoint Side="Back" 	StartX="0"	 	StartY="0.85"	EndX="1"	EndY="1"/>
+			<MountPoint Side="Front" 	StartX="0"	 	StartY="0" 		EndX="0.25"	EndY="0.85" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Left" 	StartX="0.75"	StartY="0" 		EndX="1"	EndY="0.85" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0.85" 	EndX="1" 	EndY="1" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0"	 	EndX="0.25"	EndY="0.85"/>
+			<MountPoint Side="Right" 	StartX="0.75" 	StartY="0"	 	EndX="1"	EndY="0.85"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar3Enc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar3Enc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar3Enc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar3LEnc</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+
+	<!--Small Grid-->
+
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageL_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Half Passage</DisplayName>
+		<Icon>Textures\Icons\HalfPassageLighted.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassage.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="55" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Bottom" StartX="0" StartY="3.75" EndX="5" EndY="5" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassage_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassage_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassage_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageL</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageLEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Enclosed Half Passage</DisplayName>
+		<Icon>Textures\Icons\HalfPassageEncLight.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassageEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="55" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassageEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassageEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassageEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageLEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassageTopL_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Passage Extention</DisplayName>
+		<Icon>Textures\Icons\PassageTopLighted.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassageTop.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" Default="true"/>
+			<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassageTop_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassageTop_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassageTop_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassageTopL</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageGlassL_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Half Passage Window</DisplayName>
+		<Icon>Textures\Icons\HalfPassageGlassLighted.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassageGlass.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="43" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="BulletproofGlass" Count="4" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="1.25" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassageGlass_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassageGlass_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassageGlass_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageGlassL</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageGlassLEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Enclosed Half Passage Window</DisplayName>
+		<Icon>Textures\Icons\HalfPassageGlassEncLighted.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassageGlassEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="43" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="BulletproofGlass" Count="4" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassageGlassEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassageGlassEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassageGlassEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageGlassLEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassageTopLEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Enclosed Passage Extention</DisplayName>
+		<Icon>Textures\Icons\PassageTopEncLighted.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassageTopEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassageTopEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassageTopEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassageTopEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassageTopLEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageCornerL_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Half Passage Corner</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCornerLighted.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassageCorner.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="5" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassageCorner_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassageCorner_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassageCorner_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCornerL</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassageCornerLEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Half Passage Corner</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCornerEncLighted.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassageCornerEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="5" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassageCornerEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassageCornerEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassageCornerEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCornerLEnc</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassagePillarLL_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Half Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\HalfPassagePillarLL.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassagePillarL.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Right" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Bottom" StartX="3.75" StartY="0" EndX="5" EndY="1.25" Default="true"/>
+			<MountPoint Side="Bottom" StartX="0" StartY="3.75" EndX="5" EndY="5" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassagePillarL_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassagePillarL_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassagePillarL_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassagePillarLL</BlockPairName>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassagePillarLLEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Half Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\HalfPassagePillarLLEnc.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassagePillarLEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Right" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassagePillarLEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassagePillarLEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassagePillarLEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassagePillarLLEnc</BlockPairName>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassagePillarRL_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Half Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\HalfPassagePillarRL.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassagePillarR.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Front" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1.25" EndY="1.25" Default="true"/>
+			<MountPoint Side="Bottom" StartX="0" StartY="3.75" EndX="5" EndY="5" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassagePillarR_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassagePillarR_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassagePillarR_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassagePillarRL</BlockPairName>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>HalfPassagePillarRLEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Half Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\HalfPassagePillarRLEnc.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_HalfPassagePillarREnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Front" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="3.24" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_HalfPassagePillarREnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_HalfPassagePillarREnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_HalfPassagePillarREnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassagePillarRLEnc</BlockPairName>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillarL_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillarL.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0.00" 	StartY="0.00" 	EndX="5.00" 	EndY="5.00"		/>
+			<MountPoint Side="Bottom" 	StartX="0.00" 	StartY="0.00" 	EndX="1.25" 	EndY="1.25" 	Default="true"/>
+			<MountPoint Side="Back" 	StartX="0.00" 	StartY="4.25" 	EndX="5.00" 	EndY="5.00"		/>
+			<MountPoint Side="Front" 	StartX="3.75" 	StartY="0.00" 	EndX="5.00" 	EndY="4.25" 	/>
+			<MountPoint Side="Front" 	StartX="0.00" 	StartY="4.25" 	EndX="5.00" 	EndY="5.00" 	/>
+			<MountPoint Side="Left" 	StartX="0.00" 	StartY="4.25" 	EndX="5.00" 	EndY="5.00" 	/>
+			<MountPoint Side="Left" 	StartX="0.00" 	StartY="0.00" 	EndX="1.25" 	EndY="4.25" 	/>
+			<MountPoint Side="Right" 	StartX="0.00" 	StartY="4.25" 	EndX="5.00" 	EndY="5.00" 	/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillarL</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillarLEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillarLEnc.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillarEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0.00" 	StartY="0.00" 	EndX="5.00" 	EndY="5.00"		/>
+			<MountPoint Side="Bottom" 	StartX="0.00" 	StartY="0.00" 	EndX="5.00" 	EndY="5.00" 	Default="true"/>
+			<MountPoint Side="Back" 	StartX="0.00" 	StartY="4.25" 	EndX="5.00" 	EndY="5.00"		/>
+			<MountPoint Side="Front" 	StartX="3.75" 	StartY="0.00" 	EndX="5.00" 	EndY="4.25" 	/>
+			<MountPoint Side="Front" 	StartX="0.00" 	StartY="4.25" 	EndX="5.00" 	EndY="5.00" 	/>
+			<MountPoint Side="Left" 	StartX="0.00" 	StartY="4.25" 	EndX="5.00" 	EndY="5.00" 	/>
+			<MountPoint Side="Left" 	StartX="0.00" 	StartY="0.00" 	EndX="1.25" 	EndY="4.25" 	/>
+			<MountPoint Side="Right" 	StartX="0.00" 	StartY="4.25" 	EndX="5.00" 	EndY="5.00" 	/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillarEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillarEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillarEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillarLEnc</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar2L_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar2L.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar2.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="5" 	EndY="5"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="0" 		EndX="1.25"	EndY="1.25" Default="true"/>
+			<MountPoint Side="Bottom" 	StartX="3.75"	StartY="0"		EndX="5" 	EndY="1.25" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5"/>
+			<MountPoint Side="Front" 	StartX="0"		StartY="0"		EndX="1.25"	EndY="4.25" />
+			<MountPoint Side="Front" 	StartX="3.75" 	StartY="0"		EndX="5" 	EndY="4.25" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="4.25"	EndX="5"	EndY="5" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0" 		EndX="1.25"	EndY="4.25" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Right" 	StartX="3.75"	StartY="0"	 	EndX="5"	EndY="4.25"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar2_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar2_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar2_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar2L</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar2oL_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar2oL.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar2o.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="5" 	EndY="5"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="0" 		EndX="1.25"	EndY="1.25" Default="true"/>
+			<MountPoint Side="Bottom" 	StartX="3.75"	StartY="3.75"	EndX="5" 	EndY="5" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5"/>
+			<MountPoint Side="Back" 	StartX="3.75"	StartY="0"	 	EndX="5" 	EndY="4.25"/>
+			<MountPoint Side="Front" 	StartX="3.75" 	StartY="0"		EndX="5" 	EndY="4.25" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="4.25"	EndX="5"	EndY="5" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0" 		EndX="1.25"	EndY="4.25" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0"	 	EndX="1.25"	EndY="4.25"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar2o_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar2o_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar2o_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar2oL</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar3L_Small</SubtypeId>
+		</Id>
+		<DisplayName>Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar3L.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar3.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="5" 	EndY="5"/>
+			<MountPoint Side="Bottom" 	StartX="3.75"	StartY="0" 		EndX="5" 	EndY="1.25" Default="true"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="3.75"	EndX="1.25"	EndY="5" Default="true"/>
+			<MountPoint Side="Bottom" 	StartX="3.75"	StartY="3.75"	EndX="5" 	EndY="5" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="0"	 	EndX="1.25"	EndY="4.25"/>
+			<MountPoint Side="Back" 	StartX="3.75" 	StartY="0"	 	EndX="5"	EndY="4.25"/>
+			<MountPoint Side="Back" 	StartX="0"	 	StartY="4.25"	EndX="5"	EndY="5"/>
+			<MountPoint Side="Front" 	StartX="0"	 	StartY="0" 		EndX="1.25"	EndY="4.25" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Left" 	StartX="3.75"	StartY="0" 		EndX="5"	EndY="4.25" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0"	 	EndX="1.25"	EndY="4.25"/>
+			<MountPoint Side="Right" 	StartX="3.75" 	StartY="0"	 	EndX="5"	EndY="4.25"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar3_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar3_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar3_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar3L</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar2LEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar2LEnc.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar2Enc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="5" 	EndY="5"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="0" 		EndX="5"	EndY="5" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5"/>
+			<MountPoint Side="Front" 	StartX="0"		StartY="0"		EndX="1.25"	EndY="4.25" />
+			<MountPoint Side="Front" 	StartX="3.75" 	StartY="0"		EndX="5" 	EndY="4.25" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="4.25"	EndX="5"	EndY="5" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0" 		EndX="1.25"	EndY="4.25" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Right" 	StartX="3.75"	StartY="0"	 	EndX="5"	EndY="4.25"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar2Enc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar2Enc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar2Enc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar2LEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar2oLEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar2oLEnc.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar2oEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="5" 	EndY="5"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="0" 		EndX="5"	EndY="5" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5"/>
+			<MountPoint Side="Back" 	StartX="3.75"	StartY="0"	 	EndX="5" 	EndY="4.25"/>
+			<MountPoint Side="Front" 	StartX="3.75" 	StartY="0"		EndX="5" 	EndY="4.25" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="4.25"	EndX="5"	EndY="5" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="0" 		EndX="1.25"	EndY="4.25" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0"	 	EndX="1.25"	EndY="4.25"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar2oEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar2oEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar2oEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar2oLEnc</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+	<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		<Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassagePillar3LEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Lighted Passage Pillar</DisplayName>
+		<Icon>Textures\Icons\PassagePillar3LEnc.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfPassages\AVTECH_PassagePillar3Enc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="37" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="24" />
+		</Components>
+		<CriticalComponent Subtype="Construction" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" 		StartX="0" 		StartY="0" 		EndX="5" 	EndY="5"/>
+			<MountPoint Side="Bottom" 	StartX="0"		StartY="0" 		EndX="5" 	EndY="5" Default="true"/>
+			<MountPoint Side="Back" 	StartX="0" 		StartY="0"	 	EndX="1.25"	EndY="4.25"/>
+			<MountPoint Side="Back" 	StartX="3.75" 	StartY="0"	 	EndX="5"	EndY="4.25"/>
+			<MountPoint Side="Back" 	StartX="0"	 	StartY="4.25"	EndX="5"	EndY="5"/>
+			<MountPoint Side="Front" 	StartX="0"	 	StartY="0" 		EndX="1.25"	EndY="4.25" />
+			<MountPoint Side="Front" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Left" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Left" 	StartX="3.75"	StartY="0" 		EndX="5"	EndY="4.25" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="4.25" 	EndX="5" 	EndY="5" />
+			<MountPoint Side="Right" 	StartX="0" 		StartY="0"	 	EndX="1.25"	EndY="4.25"/>
+			<MountPoint Side="Right" 	StartX="3.75" 	StartY="0"	 	EndX="5"	EndY="4.25"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfPassages\AVTECH_PassagePillar3Enc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfPassages\AVTECH_PassagePillar3Enc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfPassages\AVTECH_PassagePillar3Enc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassagePillar3LEnc</BlockPairName>
+		<MirroringX>HalfY</MirroringX>
+		<MirroringY>XHalfY</MirroringY>
+		<MirroringZ>MinusHalfY</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<Flare>NoFlare</Flare>
+		<LightRadius Min="0.1" Max="10" Default="2.0" />
+		<LightFalloff Min="0.5" Max="2" Default="1.5" />
+		<LightIntensity Min="0.0" Max="5" Default="2.0" />
+		<RequiredPowerInput>0.00008</RequiredPowerInput>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<HasPhysics>true</HasPhysics>
+		<GuiVisible>false</GuiVisible>
+			<PCU>25</PCU>
+    </Definition>
+
+	</CubeBlocks>
+</Definitions>

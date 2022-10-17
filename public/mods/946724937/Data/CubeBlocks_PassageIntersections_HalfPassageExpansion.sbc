@@ -1,0 +1,2973 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+	
+<!--Half Passage Expansion-->
+
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoor_Large</SubtypeId>
+			</Id>
+			<DisplayName>Half Passage Door</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoor.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoor.mwm</Model>
+			<Components>
+				<Component Subtype="SteelPlate" Count="40" />
+				<Component Subtype="InteriorPlate" Count="4" />
+				<Component Subtype="Construction" Count="10" />
+				<Component Subtype="SmallTube" Count="18" />
+				<Component Subtype="Motor" Count="2" />
+				<Component Subtype="Display" Count="1" />
+				<Component Subtype="Computer" Count="2" />
+				<Component Subtype="InteriorPlate" Count="6" />
+				<Component Subtype="Construction" Count="20" />
+				<Component Subtype="SteelPlate" Count="6" />
+			</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0.75" StartY="0" EndX="1" EndY="1" Default="true" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0.35" EndX="0.75" EndY="0.65" Default="true" />
+				<!--Depressurizes when open-->
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoor</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+			<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+			<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+			<EmissiveColorPreset>Default</EmissiveColorPreset>
+			<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+			<DestroySound>PoofExplosionCat3</DestroySound>
+			<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoorEnc_Large</SubtypeId>
+			</Id>
+			<DisplayName>Enclosed Half Passage Door</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoorEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoorEnc.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="40" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="18" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+				<!--Depressurizes when open-->
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoorEnc</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+			<PCU>115</PCU>
+	</Definition>
+
+	<!--Definitions for pre-door fix compatability-->
+
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoorL_Large</SubtypeId>
+			</Id>
+			<Public>false</Public>
+			<DisplayName>Half Passage Door Left</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoor.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoor.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="40" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="18" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<!--<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Back" StartX="0.75" StartY="0" EndX="1" EndY="0.85" PressurizedWhenOpen="false"/>-->
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0.75" StartY="0" EndX="1" EndY="1" Default="true" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0.35" EndX="0.75" EndY="0.65" Default="true" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoorL</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+			<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoorR_Large</SubtypeId>
+			</Id>
+			<Public>false</Public>
+			<DisplayName>Half Passage Door Right</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoor.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoor.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="40" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="18" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<!--<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="0.25" EndY="0.85" PressurizedWhenOpen="false"/>-->
+				<MountPoint Side="Bottom" StartX="0.75" StartY="0" EndX="1" EndY="1" Default="true" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0.35" EndX="0.75" EndY="0.65" Default="true" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoorR</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+			<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoorLEnc_Large</SubtypeId>
+			</Id>
+			<Public>false</Public>
+			<DisplayName>Enclosed Half Passage Door Left</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoorEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoorEnc.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="40" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="18" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<!--<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Back" StartX="0.75" StartY="0" EndX="1" EndY="0.85" PressurizedWhenOpen="false"/>-->
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoorLEnc</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+			<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoorREnc_Large</SubtypeId>
+			</Id>
+			<Public>false</Public>
+			<DisplayName>Enclosed Half Passage Door Right</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoorEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoorEnc.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="40" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="18" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<!--<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="0.25" EndY="0.85" PressurizedWhenOpen="false"/>-->
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoorREnc</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+			<PCU>115</PCU>
+	</Definition>
+
+	<!--end compatability-->
+
+	<Definition xsi:type="MyObjectBuilder_ButtonPanelDefinition">
+			<Id>
+				<TypeId>ButtonPanel</TypeId>
+				<SubtypeId>HalfPassageButtonPanel_Large</SubtypeId>
+			</Id>
+			<DisplayName>Half Passage w/ Button Panel</DisplayName>
+			<Icon>Textures\Icons\HalfPassageButtonPanel.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageButtonPanel.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="20" />
+				<Component Subtype="SmallTube" Count="36" />
+				<Component Subtype="Motor" Count="6" />
+				<Component Subtype="Computer" Count="20" />
+				<Component Subtype="Construction" Count="10" />
+				<Component Subtype="InteriorPlate" Count="10" />
+			</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+				<MountPoints>
+					<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+					<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+					<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+					<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+					<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+					<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+					<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+					<MountPoint Side="Bottom" StartX="0" StartY="0.75" EndX="1" EndY="1" Default="true" />
+				</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanel_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanel_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanel_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageButtonPanel</BlockPairName>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+					<ResourceSinkGroup>Utility</ResourceSinkGroup>
+			<ButtonCount>4</ButtonCount>
+			<ButtonSymbols>
+				<string>Textures\GUI\Icons\buttons\OneButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\TwoButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\ThreeButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\FourButton.dds</string>
+			</ButtonSymbols>
+			<UnassignedButtonColor>
+				<X>0.34</X>
+				<Y>0.34</Y>
+				<Z>0.34</Z>
+				<W>0</W>
+			</UnassignedButtonColor>
+			<ButtonColors>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+			</ButtonColors>
+			<DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+			<DamagedSound>ParticleElectrical</DamagedSound>
+			<GuiVisible>false</GuiVisible>
+			<PCU>5</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_ButtonPanelDefinition">
+			<Id>
+				<TypeId>ButtonPanel</TypeId>
+				<SubtypeId>HalfPassageButtonPanelEnc_Large</SubtypeId>
+			</Id>
+			<DisplayName>Enclosed Half Passage w/ Button Panel</DisplayName>
+			<Icon>Textures\Icons\HalfPassageButtonPanelEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageButtonPanelEnc.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="20" />
+				<Component Subtype="SmallTube" Count="36" />
+				<Component Subtype="Motor" Count="6" />
+				<Component Subtype="Computer" Count="20" />
+				<Component Subtype="Construction" Count="10" />
+				<Component Subtype="InteriorPlate" Count="10" />
+			</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+				<MountPoints>
+					<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+					<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+					<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+					<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+					<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+					<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+					<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+					<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+				</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanelEnc_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanelEnc_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanelEnc_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageButtonPanelEnc</BlockPairName>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+					<ResourceSinkGroup>Utility</ResourceSinkGroup>
+			<ButtonCount>4</ButtonCount>
+			<ButtonSymbols>
+				<string>Textures\GUI\Icons\buttons\OneButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\TwoButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\ThreeButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\FourButton.dds</string>
+			</ButtonSymbols>
+			<UnassignedButtonColor>
+				<X>0.34</X>
+				<Y>0.34</Y>
+				<Z>0.34</Z>
+				<W>0</W>
+			</UnassignedButtonColor>
+			<ButtonColors>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+			</ButtonColors>
+			<DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+			<DamagedSound>ParticleElectrical</DamagedSound>
+			<GuiVisible>false</GuiVisible>
+			<PCU>5</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AirVentDefinition">
+		<Id>
+			<TypeId>AirVent</TypeId>
+			<SubtypeId>HalfPassageAirVent</SubtypeId>
+		</Id>
+		<DisplayName>Half Passage w/ Air Vent</DisplayName>
+		<Icon>Textures\Icons\HalfPassageVent.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageAirVent.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="64" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SmallTube" Count="40" />
+			<Component Subtype="MetalGrid" Count="5" />
+			<Component Subtype="Computer" Count="5" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0.75" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1"  />
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageAirVent_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageAirVent_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageAirVent_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageAirVent</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <OperationalPowerConsumption>0.1</OperationalPowerConsumption>
+      <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+		<VentilationCapacityPerSecond>300</VentilationCapacityPerSecond>
+
+		<DepressurizeSound>BlockAirVentDepressurize</DepressurizeSound>
+		<IdleSound>BlockAirVentIdle</IdleSound>
+		<EmissiveColorPreset>Extended</EmissiveColorPreset>
+		<GuiVisible>false</GuiVisible>
+			<PCU>10</PCU>
+    </Definition>
+	<Definition xsi:type="MyObjectBuilder_AirVentDefinition">
+		<Id>
+			<TypeId>AirVent</TypeId>
+			<SubtypeId>HalfPassageAirVentEnc</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Half Passage w/ Air Vent</DisplayName>
+		<Icon>Textures\Icons\HalfPassageVentEnc.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageAirVentEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="64" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SmallTube" Count="40" />
+			<Component Subtype="MetalGrid" Count="5" />
+			<Component Subtype="Computer" Count="5" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1"  />
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageAirVentEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageAirVentEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageAirVentEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageAirVentEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <OperationalPowerConsumption>0.1</OperationalPowerConsumption>
+      <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+		<VentilationCapacityPerSecond>300</VentilationCapacityPerSecond>
+
+		<DepressurizeSound>BlockAirVentDepressurize</DepressurizeSound>
+		<IdleSound>BlockAirVentIdle</IdleSound>
+		<EmissiveColorPreset>Extended</EmissiveColorPreset>
+		<GuiVisible>false</GuiVisible>
+			<PCU>10</PCU>
+    </Definition>
+	<Definition xsi:type="MyObjectBuilder_TextPanelDefinition">
+		<Id>
+			<TypeId>TextPanel</TypeId>
+			<SubtypeId>HalfPassageLCD</SubtypeId>
+		</Id>
+		<DisplayName>Half Passage w/ LCD</DisplayName>
+		<Icon>Textures\Icons\HalfPassageLCD.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageLCD.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="75" />
+			<Component Subtype="Construction" Count="25" />
+			<Component Subtype="SmallTube" Count="48" />
+			<Component Subtype="Computer" Count="4" />
+			<Component Subtype="Display" Count="6" />
+			<Component Subtype="BulletproofGlass" Count="4" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0.75" EndX="1" EndY="1" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageLCD_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageLCD_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageLCD_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageLCD</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<ResourceSinkGroup>Utility</ResourceSinkGroup>
+		<RequiredPowerInput>0.0001</RequiredPowerInput>
+		<TextureResolution>512</TextureResolution>
+        <ScreenWidth>5</ScreenWidth>
+        <ScreenHeight>3</ScreenHeight>
+        <ScreenAreas>
+           <ScreenArea Name="ScreenArea" DisplayName="ScreenArea" TextureResolution="512" ScreenWidth="5" ScreenHeight="3" />
+           <ScreenArea Name="ScreenArea90" DisplayName="ScreenArea90" TextureResolution="512" ScreenWidth="3" ScreenHeight="5" />
+           <ScreenArea Name="ScreenArea180" DisplayName="ScreenArea180" TextureResolution="512" ScreenWidth="5" ScreenHeight="3" />
+           <ScreenArea Name="ScreenArea270" DisplayName="ScreenArea270" TextureResolution="512" ScreenWidth="3" ScreenHeight="5" />
+        </ScreenAreas>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<GuiVisible>false</GuiVisible>
+			<PCU>5</PCU>
+		</Definition>
+	<Definition xsi:type="MyObjectBuilder_TextPanelDefinition">
+		<Id>
+			<TypeId>TextPanel</TypeId>
+			<SubtypeId>HalfPassageLCDEnc</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Half Passage w/ LCD</DisplayName>
+		<Icon>Textures\Icons\HalfPassageLCDEnc.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageLCDEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="75" />
+			<Component Subtype="Construction" Count="25" />
+			<Component Subtype="SmallTube" Count="48" />
+			<Component Subtype="Computer" Count="4" />
+			<Component Subtype="Display" Count="6" />
+			<Component Subtype="BulletproofGlass" Count="4" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageLCDEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageLCDEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageLCDEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageLCDEnc</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<ResourceSinkGroup>Utility</ResourceSinkGroup>
+		<RequiredPowerInput>0.0001</RequiredPowerInput>
+		<TextureResolution>512</TextureResolution>
+        <ScreenWidth>5</ScreenWidth>
+        <ScreenHeight>3</ScreenHeight>
+        <ScreenAreas>
+           <ScreenArea Name="ScreenArea" DisplayName="ScreenArea" TextureResolution="512" ScreenWidth="5" ScreenHeight="3" />
+           <ScreenArea Name="ScreenArea90" DisplayName="ScreenArea90" TextureResolution="512" ScreenWidth="3" ScreenHeight="5" />
+           <ScreenArea Name="ScreenArea180" DisplayName="ScreenArea180" TextureResolution="512" ScreenWidth="5" ScreenHeight="3" />
+           <ScreenArea Name="ScreenArea270" DisplayName="ScreenArea270" TextureResolution="512" ScreenWidth="3" ScreenHeight="5" />
+        </ScreenAreas>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<GuiVisible>false</GuiVisible>
+			<PCU>5</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+		<Id>
+			<TypeId>AdvancedDoor</TypeId>
+			<SubtypeId>PassageTopDoor_Large</SubtypeId>
+		</Id>
+		<DisplayName>Passage Door Extention</DisplayName>
+		<Icon>Textures\Icons\PassageTopDoor.dds</Icon>
+		<GuiVisible>false</GuiVisible>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_PassageTopDoor.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="50" />
+			<Component Subtype="InteriorPlate" Count="14" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="Motor" Count="4" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="12" />
+			<Component Subtype="Construction" Count="30" />
+			<Component Subtype="SteelPlate" Count="12" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" Default="true"/>
+			<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1"/>
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<!--Depressurizes when open-->
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_PassageTopDoor_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_PassageTopDoor_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_PassageTopDoor_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassageTopDoor</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>30</BuildTimeSeconds>
+		<DisassembleRatio>1.5</DisassembleRatio>
+		<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+		<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<ResourceSinkGroup>Doors</ResourceSinkGroup>
+		<Subparts>
+			<SubpartDefinition>
+			<Name>DoorUp1_Large</Name> <!--ID=0-->
+			</SubpartDefinition>
+			<SubpartDefinition>
+			<Name>DoorUp2_Large</Name> <!--ID=1-->
+			</SubpartDefinition> 
+			<SubpartDefinition>
+			<Name>DoorUp3_Large</Name> <!--ID=2-->
+			</SubpartDefinition>
+			<SubpartDefinition>
+			<Name>DoorUp4_Large</Name> <!--ID=3-->
+			</SubpartDefinition>		
+		</Subparts>
+		<OpeningSequence>
+			<Opening>
+				<IDs>0</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>0.3</MaxOpen>
+				<Speed>0.42</Speed>
+				<!--<CloseDelay>1.1</CloseDelay>-->
+				<OpenSound>BlockDoorSmallOpen</OpenSound>
+				<CloseSound>BlockDoorSmallClose</CloseSound>
+			</Opening>	
+			<Opening>
+				<IDs>1</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>0.85</MaxOpen>
+				<Speed>1.27</Speed>
+				<!--<CloseDelay>1.1</CloseDelay>-->
+			</Opening>			
+			<Opening>
+				<IDs>2</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>1.4</MaxOpen>
+				<Speed>2.12</Speed>
+				<!--<OpenDelay>1.1</OpenDelay>-->
+				<OpenSound>BlockDoorSmallOpen</OpenSound>
+				<CloseSound>BlockDoorSmallClose</CloseSound>
+			</Opening>
+			<Opening>
+				<IDs>3</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>1.95</MaxOpen>
+				<Speed>2.97</Speed>
+				<!--<OpenDelay>1.1</OpenDelay>-->
+			</Opening>
+		</OpeningSequence>
+		<!--<IsAirTight>true</IsAirTight>-->
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+		<Id>
+			<TypeId>AdvancedDoor</TypeId>
+			<SubtypeId>PassageTopDoorEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Passage Door Extention</DisplayName>
+		<Icon>Textures\Icons\PassageTopDoorEnc.dds</Icon>
+		<GuiVisible>false</GuiVisible>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_PassageTopDoorEnc.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="50" />
+			<Component Subtype="InteriorPlate" Count="14" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="Motor" Count="4" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="12" />
+			<Component Subtype="Construction" Count="30" />
+			<Component Subtype="SteelPlate" Count="12" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1"/>
+			<MountPoint Side="Back" StartX="0" StartY="0.85" EndX="1" EndY="1"/>
+			<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1"/>
+			<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true"/>
+			<!--Depressurizes when open-->
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_PassageTopDoorEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_PassageTopDoorEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_PassageTopDoorEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassageTopDoorEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>30</BuildTimeSeconds>
+		<DisassembleRatio>1.5</DisassembleRatio>
+		<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+		<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<ResourceSinkGroup>Doors</ResourceSinkGroup>
+		<Subparts>
+			<SubpartDefinition>
+			<Name>DoorUp1_Large</Name> <!--ID=0-->
+			</SubpartDefinition>
+			<SubpartDefinition>
+			<Name>DoorUp2_Large</Name> <!--ID=1-->
+			</SubpartDefinition> 
+			<SubpartDefinition>
+			<Name>DoorUp3_Large</Name> <!--ID=2-->
+			</SubpartDefinition>
+			<SubpartDefinition>
+			<Name>DoorUp4_Large</Name> <!--ID=3-->
+			</SubpartDefinition>		
+		</Subparts>
+		<OpeningSequence>
+			<Opening>
+				<IDs>0</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>0.3</MaxOpen>
+				<Speed>0.42</Speed>
+				<!--<CloseDelay>1.1</CloseDelay>-->
+				<OpenSound>BlockDoorSmallOpen</OpenSound>
+				<CloseSound>BlockDoorSmallClose</CloseSound>
+			</Opening>	
+			<Opening>
+				<IDs>1</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>0.85</MaxOpen>
+				<Speed>1.27</Speed>
+				<!--<CloseDelay>1.1</CloseDelay>-->
+			</Opening>			
+			<Opening>
+				<IDs>2</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>1.4</MaxOpen>
+				<Speed>2.12</Speed>
+				<!--<OpenDelay>1.1</OpenDelay>-->
+				<OpenSound>BlockDoorSmallOpen</OpenSound>
+				<CloseSound>BlockDoorSmallClose</CloseSound>
+			</Opening>
+			<Opening>
+				<IDs>3</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>1.95</MaxOpen>
+				<Speed>2.97</Speed>
+				<!--<OpenDelay>1.1</OpenDelay>-->
+			</Opening>
+		</OpeningSequence>
+		<!--<IsAirTight>true</IsAirTight>-->		
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_DoorDefinition">
+		<Id>
+			<TypeId>Door</TypeId>
+			<SubtypeId>HalfPassageDoorSide_Large</SubtypeId>
+		</Id>
+		<DisplayName>Half Passage w/ Side Door</DisplayName>
+		<Icon>Textures\Icons\HalfPassageDoorSide.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageDoorSide.mwm</Model>
+		<OpenSound>BlockDoorSmallOpen</OpenSound>
+		<CloseSound>BlockDoorSmallClose</CloseSound>
+		<Components>
+			<Component Subtype="SteelPlate" Count="50" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="25" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0.73" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="0.25" EndY="0.73" />
+				<MountPoint Side="Back" StartX="0.75" StartY="0" EndX="1" EndY="0.73" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0.85" EndX="1" EndY="1" Default="true" />
+				<!--Depressurizes when open-->
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSide_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSide_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSide_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageDoorSide</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>24</BuildTimeSeconds>
+		<DisassembleRatio>1.5</DisassembleRatio>
+		<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+		<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<ResourceSinkGroup>Doors</ResourceSinkGroup>
+		<MaxOpen>1.2</MaxOpen>
+		<OpeningSpeed>3</OpeningSpeed>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_DoorDefinition">
+		<Id>
+			<TypeId>Door</TypeId>
+			<SubtypeId>HalfPassageDoorSideEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Half Passage w/ Side Door</DisplayName>
+		<Icon>Textures\Icons\HalfPassageDoorSideEnc.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageDoorSideEnc.mwm</Model>
+		<OpenSound>BlockDoorSmallOpen</OpenSound>
+		<CloseSound>BlockDoorSmallClose</CloseSound>
+		<Components>
+			<Component Subtype="SteelPlate" Count="50" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="25" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0.73" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="0.25" EndY="0.73" />
+				<MountPoint Side="Back" StartX="0.75" StartY="0" EndX="1" EndY="0.73" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+				<!--Depressurizes when open-->
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" PressurizedWhenOpen="false"/>
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSideEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSideEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSideEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageDoorSideEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>24</BuildTimeSeconds>
+		<DisassembleRatio>1.5</DisassembleRatio>
+		<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+		<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<ResourceSinkGroup>Doors</ResourceSinkGroup>
+		<MaxOpen>1.2</MaxOpen>
+		<OpeningSpeed>3</OpeningSpeed>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>115</PCU>
+	</Definition>
+
+	<!--Small Grid-->
+
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoor_Small</SubtypeId>
+			</Id>
+			<DisplayName>Half Passage Door</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoor.dds</Icon>
+			<CubeSize>Small</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="5" y="5" z="5" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoor.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="40" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="18" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="3.75" StartY="0" EndX="5" EndY="5" Default="true" />
+				<MountPoint Side="Bottom" StartX="0" StartY="1.75" EndX="3.75" EndY="3.25" Default="true" />
+				<!--Depressurizes when open-->
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoor</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+			<DamageEffectId>212</DamageEffectId>
+			<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+			<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoorEnc_Small</SubtypeId>
+			</Id>
+			<DisplayName>Enclosed Half Passage Door</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoorEnc.dds</Icon>
+			<CubeSize>Small</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="5" y="5" z="5" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoorEnc.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="40" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="18" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
+				<!--Depressurizes when open-->
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoorEnc</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+			<DamageEffectId>212</DamageEffectId>
+			<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+			<PCU>115</PCU>
+	</Definition>
+
+	<!--Definitions for pre-door fix compatability-->
+
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoorL_Small</SubtypeId>
+			</Id>
+			<Public>false</Public>
+			<DisplayName>Half Passage Door Left</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoor.dds</Icon>
+			<CubeSize>Small</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="5" y="5" z="5" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoor.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="40" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="18" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<!--<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Back" StartX="3.75" StartY="0" EndX="5" EndY="4.25" PressurizedWhenOpen="false"/>-->
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="3.75" StartY="0" EndX="5" EndY="5" Default="true" />
+				<MountPoint Side="Bottom" StartX="0" StartY="1.75" EndX="3.75" EndY="3.25" Default="true" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoorL</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+			<DamageEffectId>212</DamageEffectId>
+			<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+			<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoorR_Small</SubtypeId>
+			</Id>
+			<Public>false</Public>
+			<DisplayName>Half Passage Door Right</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoor.dds</Icon>
+			<CubeSize>Small</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="5" y="5" z="5" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoor.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="40" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="18" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<!--<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1.25" EndY="4.25" PressurizedWhenOpen="false"/>-->
+				<MountPoint Side="Bottom" StartX="3.75" StartY="0" EndX="5" EndY="5" Default="true" />
+				<MountPoint Side="Bottom" StartX="0" StartY="1.75" EndX="3.75" EndY="3.25" Default="true" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoor_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoorR</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+			<DamageEffectId>212</DamageEffectId>
+			<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+			<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoorLEnc_Small</SubtypeId>
+			</Id>
+			<Public>false</Public>
+			<DisplayName>Enclosed Half Passage Door Left</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoorEnc.dds</Icon>
+			<CubeSize>Small</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="5" y="5" z="5" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoorEnc.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="40" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="18" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<!--<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Back" StartX="3.75" StartY="0" EndX="5" EndY="4.25" PressurizedWhenOpen="false"/>-->
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoorLEnc</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+			<DamageEffectId>212</DamageEffectId>
+			<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+			<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+			<Id>
+				<TypeId>AdvancedDoor</TypeId>
+				<SubtypeId>HalfPassageDoorREnc_Small</SubtypeId>
+			</Id>
+			<Public>false</Public>
+			<DisplayName>Enclosed Half Passage Door Right</DisplayName>
+			<Icon>Textures\Icons\HalfPassageDoorEnc.dds</Icon>
+			<CubeSize>Small</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="5" y="5" z="5" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageDoorEnc.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="40" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="SmallTube" Count="18" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<!--<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1.25" EndY="4.25" PressurizedWhenOpen="false"/>-->
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoorEnc_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageDoorREnc</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<DisassembleRatio>1.5</DisassembleRatio>
+			<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+			<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+			<DamageEffectId>212</DamageEffectId>
+			<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Doors</ResourceSinkGroup>
+				<Subparts>
+				<SubpartDefinition>
+				<Name>DoorLeftInner_Large</Name>
+				</SubpartDefinition>
+				<SubpartDefinition>
+				<Name>DoorLeftOuter_Large</Name>
+				</SubpartDefinition> 
+			</Subparts>
+			<OpeningSequence>
+				<Opening>
+					<IDs>0</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>0.6</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<OpenDelay>0.41</OpenDelay>
+					<OpenSound>BlockDoorSmallOpen</OpenSound>
+				</Opening>	
+				<Opening>
+					<IDs>1</IDs> 
+					<Move>Slide</Move>
+					<SlideDirection x="1" y="0" z="0" />
+					<MaxOpen>1.52</MaxOpen>
+					<Speed>2.25</Speed>
+					<CloseDelay>0</CloseDelay>
+					<CloseSound>BlockDoorSmallClose</CloseSound>
+				</Opening>
+			</OpeningSequence>
+			<GuiVisible>false</GuiVisible>
+			<PCU>115</PCU>
+	</Definition>
+	
+	<!--end compatability-->
+	
+	<Definition xsi:type="MyObjectBuilder_ButtonPanelDefinition">
+			<Id>
+				<TypeId>ButtonPanel</TypeId>
+				<SubtypeId>HalfPassageButtonPanel_Small</SubtypeId>
+			</Id>
+			<DisplayName>Half Passage w/ Button Panel</DisplayName>
+			<Icon>Textures\Icons\HalfPassageButtonPanel.dds</Icon>
+			<CubeSize>Small</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="5" y="5" z="5" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageButtonPanel.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="20" />
+				<Component Subtype="SmallTube" Count="36" />
+				<Component Subtype="Motor" Count="6" />
+				<Component Subtype="Computer" Count="20" />
+				<Component Subtype="Construction" Count="10" />
+				<Component Subtype="InteriorPlate" Count="10" />
+			</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+				<MountPoints>
+					<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+					<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+					<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" />
+					<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+					<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+					<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+					<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+					<MountPoint Side="Bottom" StartX="0" StartY="3.75" EndX="5" EndY="5" Default="true" />
+				</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanel_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanel_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanel_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageButtonPanel</BlockPairName>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+					<ResourceSinkGroup>Utility</ResourceSinkGroup>
+			<ButtonCount>4</ButtonCount>
+			<ButtonSymbols>
+				<string>Textures\GUI\Icons\buttons\OneButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\TwoButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\ThreeButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\FourButton.dds</string>
+			</ButtonSymbols>
+			<UnassignedButtonColor>
+				<X>0.34</X>
+				<Y>0.34</Y>
+				<Z>0.34</Z>
+				<W>0</W>
+			</UnassignedButtonColor>
+			<ButtonColors>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+			</ButtonColors>
+			<DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+			<DamagedSound>ParticleElectrical</DamagedSound>
+			<GuiVisible>false</GuiVisible>
+			<PCU>5</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_ButtonPanelDefinition">
+			<Id>
+				<TypeId>ButtonPanel</TypeId>
+				<SubtypeId>HalfPassageButtonPanelEnc_Small</SubtypeId>
+			</Id>
+			<DisplayName>Enclosed Half Passage w/ Button Panel</DisplayName>
+			<Icon>Textures\Icons\HalfPassageButtonPanelEnc.dds</Icon>
+			<CubeSize>Small</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="5" y="5" z="5" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\HalfExpansion\AVTECH_HalfPassageButtonPanelEnc.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="20" />
+				<Component Subtype="SmallTube" Count="36" />
+				<Component Subtype="Motor" Count="6" />
+				<Component Subtype="Computer" Count="20" />
+				<Component Subtype="Construction" Count="10" />
+				<Component Subtype="InteriorPlate" Count="10" />
+			</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+				<MountPoints>
+					<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+					<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+					<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" />
+					<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+					<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+					<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+					<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+					<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
+				</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanelEnc_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanelEnc_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageButtonPanelEnc_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>HalfPassageButtonPanelEnc</BlockPairName>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+					<ResourceSinkGroup>Utility</ResourceSinkGroup>
+			<ButtonCount>4</ButtonCount>
+			<ButtonSymbols>
+				<string>Textures\GUI\Icons\buttons\OneButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\TwoButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\ThreeButton.dds</string>
+				<string>Textures\GUI\Icons\buttons\FourButton.dds</string>
+			</ButtonSymbols>
+			<UnassignedButtonColor>
+				<X>0.34</X>
+				<Y>0.34</Y>
+				<Z>0.34</Z>
+				<W>0</W>
+			</UnassignedButtonColor>
+			<ButtonColors>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+				<Vector4>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>0.3</Z>
+				<W>1</W>
+				</Vector4>
+			</ButtonColors>
+			<DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+			<DamagedSound>ParticleElectrical</DamagedSound>
+			<GuiVisible>false</GuiVisible>
+			<PCU>5</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AirVentDefinition">
+		<Id>
+			<TypeId>AirVent</TypeId>
+			<SubtypeId>HalfPassageAirVent_Small</SubtypeId>
+		</Id>
+		<DisplayName>Half Passage w/ Air Vent</DisplayName>
+		<Icon>Textures\Icons\HalfPassageVent.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageAirVent.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="64" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SmallTube" Count="40" />
+			<Component Subtype="MetalGrid" Count="5" />
+			<Component Subtype="Computer" Count="5" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Bottom" StartX="0" StartY="3.75" EndX="5" EndY="5" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5"  />
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageAirVent_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageAirVent_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageAirVent_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageAirVent</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<ResourceSinkGroup>Factory</ResourceSinkGroup>
+		<OperationalPowerConsumption>0.33</OperationalPowerConsumption>
+		<StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+		<VentilationCapacityPerSecond>300</VentilationCapacityPerSecond>
+
+		<DepressurizeSound>BlockAirVentDepressurize</DepressurizeSound>
+		<IdleSound>BlockAirVentIdle</IdleSound>
+		<EmissiveColorPreset>Extended</EmissiveColorPreset>
+		<GuiVisible>false</GuiVisible>
+			<PCU>10</PCU>
+    </Definition>
+	<Definition xsi:type="MyObjectBuilder_AirVentDefinition">
+		<Id>
+			<TypeId>AirVent</TypeId>
+			<SubtypeId>HalfPassageAirVentEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Half Passage w/ Air Vent</DisplayName>
+		<Icon>Textures\Icons\HalfPassageVentEnc.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageAirVentEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="64" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SmallTube" Count="40" />
+			<Component Subtype="MetalGrid" Count="5" />
+			<Component Subtype="Computer" Count="5" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5"  />
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageAirVentEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageAirVentEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageAirVentEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageAirVentEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		
+		<ResourceSourceGroup>Battery</ResourceSourceGroup>
+		<ResourceSinkGroup>Factory</ResourceSinkGroup>
+		<OperationalPowerConsumption>0.33</OperationalPowerConsumption>
+		<StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+		<VentilationCapacityPerSecond>300</VentilationCapacityPerSecond>
+
+		<DepressurizeSound>BlockAirVentDepressurize</DepressurizeSound>
+		<IdleSound>BlockAirVentIdle</IdleSound>
+		<EmissiveColorPreset>Extended</EmissiveColorPreset>
+		<GuiVisible>false</GuiVisible>
+			<PCU>10</PCU>
+    </Definition>
+	<Definition xsi:type="MyObjectBuilder_TextPanelDefinition">
+		<Id>
+			<TypeId>TextPanel</TypeId>
+			<SubtypeId>HalfPassageLCD_Small</SubtypeId>
+		</Id>
+		<DisplayName>Half Passage w/ LCD</DisplayName>
+		<Icon>Textures\Icons\HalfPassageLCD.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageLCD.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="75" />
+			<Component Subtype="Construction" Count="25" />
+			<Component Subtype="SmallTube" Count="48" />
+			<Component Subtype="Computer" Count="4" />
+			<Component Subtype="Display" Count="6" />
+			<Component Subtype="BulletproofGlass" Count="4" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="0" StartY="3.75" EndX="5" EndY="5" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageLCD_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageLCD_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageLCD_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageLCD</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<ResourceSinkGroup>Utility</ResourceSinkGroup>
+		<RequiredPowerInput>0.0001</RequiredPowerInput>
+		<TextureResolution>512</TextureResolution>
+        <ScreenWidth>5</ScreenWidth>
+        <ScreenHeight>3</ScreenHeight>
+        <ScreenAreas>
+           <ScreenArea Name="ScreenArea" DisplayName="ScreenArea" TextureResolution="512" ScreenWidth="5" ScreenHeight="3" />
+           <ScreenArea Name="ScreenArea90" DisplayName="ScreenArea90" TextureResolution="512" ScreenWidth="3" ScreenHeight="5" />
+           <ScreenArea Name="ScreenArea180" DisplayName="ScreenArea180" TextureResolution="512" ScreenWidth="5" ScreenHeight="3" />
+           <ScreenArea Name="ScreenArea270" DisplayName="ScreenArea270" TextureResolution="512" ScreenWidth="3" ScreenHeight="5" />
+        </ScreenAreas>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<GuiVisible>false</GuiVisible>
+			<PCU>5</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_TextPanelDefinition">
+		<Id>
+			<TypeId>TextPanel</TypeId>
+			<SubtypeId>HalfPassageLCDEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Half Passage w/ LCD</DisplayName>
+		<Icon>Textures\Icons\HalfPassageLCDEnc.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageLCDEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="75" />
+			<Component Subtype="Construction" Count="25" />
+			<Component Subtype="SmallTube" Count="48" />
+			<Component Subtype="Computer" Count="4" />
+			<Component Subtype="Display" Count="6" />
+			<Component Subtype="BulletproofGlass" Count="4" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageLCDEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageLCDEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageLCDEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageLCDEnc</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<ResourceSinkGroup>Utility</ResourceSinkGroup>
+		<RequiredPowerInput>0.0001</RequiredPowerInput>
+		<TextureResolution>512</TextureResolution>
+        <ScreenWidth>5</ScreenWidth>
+        <ScreenHeight>3</ScreenHeight>
+        <ScreenAreas>
+           <ScreenArea Name="ScreenArea" DisplayName="ScreenArea" TextureResolution="512" ScreenWidth="5" ScreenHeight="3" />
+           <ScreenArea Name="ScreenArea90" DisplayName="ScreenArea90" TextureResolution="512" ScreenWidth="3" ScreenHeight="5" />
+           <ScreenArea Name="ScreenArea180" DisplayName="ScreenArea180" TextureResolution="512" ScreenWidth="5" ScreenHeight="3" />
+           <ScreenArea Name="ScreenArea270" DisplayName="ScreenArea270" TextureResolution="512" ScreenWidth="3" ScreenHeight="5" />
+        </ScreenAreas>
+		<DamageEffectId>214</DamageEffectId>
+		<DamagedSound>ParticleElectrical</DamagedSound>
+		<GuiVisible>false</GuiVisible>
+			<PCU>5</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+		<Id>
+			<TypeId>AdvancedDoor</TypeId>
+			<SubtypeId>PassageTopDoor_Small</SubtypeId>
+		</Id>
+		<DisplayName>Passage Door Extention</DisplayName>
+		<Icon>Textures\Icons\PassageTopDoor.dds</Icon>
+		<GuiVisible>false</GuiVisible>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Center x="2" y="4" z="2" />
+		<Model>Models\HalfExpansion\AVTECH_PassageTopDoor.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="50" />
+			<Component Subtype="InteriorPlate" Count="14" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="Motor" Count="4" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="12" />
+			<Component Subtype="Construction" Count="30" />
+			<Component Subtype="SteelPlate" Count="12" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" Default="true"/>
+			<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<!--Depressurizes when open-->
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_PassageTopDoor_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_PassageTopDoor_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_PassageTopDoor_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassageTopDoor</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>30</BuildTimeSeconds>
+		<DisassembleRatio>1.5</DisassembleRatio>
+		<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+		<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<ResourceSinkGroup>Doors</ResourceSinkGroup>
+		<Subparts>
+			<SubpartDefinition>
+			<Name>DoorUp1_Large</Name> <!--ID=0-->
+			</SubpartDefinition>
+			<SubpartDefinition>
+			<Name>DoorUp2_Large</Name> <!--ID=1-->
+			</SubpartDefinition> 
+			<SubpartDefinition>
+			<Name>DoorUp3_Large</Name> <!--ID=2-->
+			</SubpartDefinition>
+			<SubpartDefinition>
+			<Name>DoorUp4_Large</Name> <!--ID=3-->
+			</SubpartDefinition>		
+		</Subparts>
+		<OpeningSequence>
+			<Opening>
+				<IDs>0</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>0.3</MaxOpen>
+				<Speed>0.42</Speed>
+				<!--<CloseDelay>1.1</CloseDelay>-->
+				<OpenSound>BlockDoorSmallOpen</OpenSound>
+				<CloseSound>BlockDoorSmallClose</CloseSound>
+			</Opening>	
+			<Opening>
+				<IDs>1</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>0.85</MaxOpen>
+				<Speed>1.27</Speed>
+				<!--<CloseDelay>1.1</CloseDelay>-->
+			</Opening>			
+			<Opening>
+				<IDs>2</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>1.4</MaxOpen>
+				<Speed>2.12</Speed>
+				<!--<OpenDelay>1.1</OpenDelay>-->
+				<OpenSound>BlockDoorSmallOpen</OpenSound>
+				<CloseSound>BlockDoorSmallClose</CloseSound>
+			</Opening>
+			<Opening>
+				<IDs>3</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>1.95</MaxOpen>
+				<Speed>2.97</Speed>
+				<!--<OpenDelay>1.1</OpenDelay>-->
+			</Opening>
+		</OpeningSequence>
+		<!--<IsAirTight>true</IsAirTight>-->		
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+		<Id>
+			<TypeId>AdvancedDoor</TypeId>
+			<SubtypeId>PassageTopDoorEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Passage Door Extention</DisplayName>
+		<Icon>Textures\Icons\PassageTopDoorEnc.dds</Icon>
+		<GuiVisible>false</GuiVisible>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Center x="2" y="4" z="2" />
+		<Model>Models\HalfExpansion\AVTECH_PassageTopDoorEnc.mwm</Model>
+		<Components>
+			<Component Subtype="SteelPlate" Count="50" />
+			<Component Subtype="InteriorPlate" Count="14" />
+			<Component Subtype="Construction" Count="20" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="Motor" Count="4" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="12" />
+			<Component Subtype="Construction" Count="30" />
+			<Component Subtype="SteelPlate" Count="12" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5"/>
+			<MountPoint Side="Back" StartX="0" StartY="4.25" EndX="5" EndY="5"/>
+			<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true"/>
+			<!--Depressurizes when open-->
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+		</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_PassageTopDoorEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.67" File="Models\HalfExpansion\AVTECH_PassageTopDoorEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_PassageTopDoorEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>PassageTopDoorEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>30</BuildTimeSeconds>
+		<DisassembleRatio>1.5</DisassembleRatio>
+		<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+		<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<ResourceSinkGroup>Doors</ResourceSinkGroup>
+		<Subparts>
+			<SubpartDefinition>
+			<Name>DoorUp1_Large</Name> <!--ID=0-->
+			</SubpartDefinition>
+			<SubpartDefinition>
+			<Name>DoorUp2_Large</Name> <!--ID=1-->
+			</SubpartDefinition> 
+			<SubpartDefinition>
+			<Name>DoorUp3_Large</Name> <!--ID=2-->
+			</SubpartDefinition>
+			<SubpartDefinition>
+			<Name>DoorUp4_Large</Name> <!--ID=3-->
+			</SubpartDefinition>		
+		</Subparts>
+		<OpeningSequence>
+			<Opening>
+				<IDs>0</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>0.3</MaxOpen>
+				<Speed>0.42</Speed>
+				<!--<CloseDelay>1.1</CloseDelay>-->
+				<OpenSound>BlockDoorSmallOpen</OpenSound>
+				<CloseSound>BlockDoorSmallClose</CloseSound>
+			</Opening>	
+			<Opening>
+				<IDs>1</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>0.85</MaxOpen>
+				<Speed>1.27</Speed>
+				<!--<CloseDelay>1.1</CloseDelay>-->
+			</Opening>			
+			<Opening>
+				<IDs>2</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>1.4</MaxOpen>
+				<Speed>2.12</Speed>
+				<!--<OpenDelay>1.1</OpenDelay>-->
+				<OpenSound>BlockDoorSmallOpen</OpenSound>
+				<CloseSound>BlockDoorSmallClose</CloseSound>
+			</Opening>
+			<Opening>
+				<IDs>3</IDs> 
+				<Move>Slide</Move>
+				<SlideDirection x="0" y="1" z="0" />
+				<MaxOpen>1.95</MaxOpen>
+				<Speed>2.97</Speed>
+				<!--<OpenDelay>1.1</OpenDelay>-->
+			</Opening>
+		</OpeningSequence>
+		<!--<IsAirTight>true</IsAirTight>-->		
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_DoorDefinition">
+		<Id>
+			<TypeId>Door</TypeId>
+			<SubtypeId>HalfPassageDoorSide_Small</SubtypeId>
+		</Id>
+		<DisplayName>Half Passage w/ Side Door</DisplayName>
+		<Icon>Textures\Icons\HalfPassageDoorSide.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageDoorSide.mwm</Model>
+		<OpenSound>BlockDoorSmallOpen</OpenSound>
+		<CloseSound>BlockDoorSmallClose</CloseSound>
+		<Components>
+			<Component Subtype="SteelPlate" Count="50" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="25" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="3.65" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1.25" EndY="3.65" />
+				<MountPoint Side="Back" StartX="3.75" StartY="0" EndX="5" EndY="3.65" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="0" StartY="4.25" EndX="5" EndY="5" Default="true" />
+				<!--Depressurizes when open-->
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSide_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSide_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSide_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageDoorSide</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>24</BuildTimeSeconds>
+		<DisassembleRatio>1.5</DisassembleRatio>
+		<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+		<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<ResourceSinkGroup>Doors</ResourceSinkGroup>
+		<MaxOpen>1.2</MaxOpen>
+		<OpeningSpeed>3</OpeningSpeed>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>115</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_DoorDefinition">
+		<Id>
+			<TypeId>Door</TypeId>
+			<SubtypeId>HalfPassageDoorSideEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Half Passage w/ Side Door</DisplayName>
+		<Icon>Textures\Icons\HalfPassageDoorSideEnc.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageDoorSideEnc.mwm</Model>
+		<OpenSound>BlockDoorSmallOpen</OpenSound>
+		<CloseSound>BlockDoorSmallClose</CloseSound>
+		<Components>
+			<Component Subtype="SteelPlate" Count="50" />
+			<Component Subtype="InteriorPlate" Count="4" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="24" />
+			<Component Subtype="Motor" Count="2" />
+			<Component Subtype="Display" Count="1" />
+			<Component Subtype="Computer" Count="2" />
+			<Component Subtype="InteriorPlate" Count="6" />
+			<Component Subtype="Construction" Count="25" />
+			<Component Subtype="SteelPlate" Count="6" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<!--Mount Points on this side removes airtightness -->
+				<MountPoint Side="Back" StartX="0" StartY="3.65" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1.25" EndY="3.65" />
+				<MountPoint Side="Back" StartX="3.75" StartY="0" EndX="5" EndY="3.65" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
+				<!--Depressurizes when open-->
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" PressurizedWhenOpen="false"/>
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSideEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSideEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageDoorSideEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageDoorSideEnc</BlockPairName>
+		<MirroringY>Z</MirroringY>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>24</BuildTimeSeconds>
+		<DisassembleRatio>1.5</DisassembleRatio>
+		<PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+		<PowerConsumptionMoving>0.001</PowerConsumptionMoving>
+		<ResourceSinkGroup>Doors</ResourceSinkGroup>
+		<MaxOpen>1.2</MaxOpen>
+		<OpeningSpeed>3</OpeningSpeed>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<EmissiveColorPreset>Default</EmissiveColorPreset>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>115</PCU>
+	</Definition>
+
+<!--Half Passage Cargo Access-->
+
+	<Definition xsi:type="MyObjectBuilder_CargoContainerDefinition">
+		<Id>
+			<TypeId>CargoContainer</TypeId>
+			<SubtypeId>HalfPassageCargoAccess_Large</SubtypeId>
+		</Id>
+		<DisplayName>Half Passage Cargo Access</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCargoAccess.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageCargoAccess.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="50" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+			<Component Subtype="Motor" Count="6" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Motor" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0.85" EndX="1" EndY="1" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCargoAccess</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+        <InventoryMaxVolume>0</InventoryMaxVolume>
+        <InventorySize>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </InventorySize>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>10</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_CargoContainerDefinition">
+		<Id>
+			<TypeId>CargoContainer</TypeId>
+			<SubtypeId>HalfPassageCargoAccessEnc_Large</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Half Passage Cargo Access</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCargoAccessEnc.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="50" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+			<Component Subtype="Motor" Count="6" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Motor" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCargoAccessEnc</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+        <InventoryMaxVolume>0</InventoryMaxVolume>
+        <InventorySize>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </InventorySize>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>10</PCU>
+	</Definition>
+
+<!--Small Grid Cargo Access-->
+
+	<Definition xsi:type="MyObjectBuilder_CargoContainerDefinition">
+		<Id>
+			<TypeId>CargoContainer</TypeId>
+			<SubtypeId>HalfPassageCargoAccess_Small</SubtypeId>
+		</Id>
+		<DisplayName>Half Passage Cargo Access</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCargoAccess.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageCargoAccess.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="50" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+			<Component Subtype="Motor" Count="6" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Motor" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="0" StartY="4.25" EndX="5" EndY="5" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCargoAccess</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+        <InventoryMaxVolume>0</InventoryMaxVolume>
+        <InventorySize>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </InventorySize>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>10</PCU>
+	</Definition>
+	<Definition xsi:type="MyObjectBuilder_CargoContainerDefinition">
+		<Id>
+			<TypeId>CargoContainer</TypeId>
+			<SubtypeId>HalfPassageCargoAccessEnc_Small</SubtypeId>
+		</Id>
+		<DisplayName>Enclosed Half Passage Cargo Access</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCargoAccessEnc.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="50" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+			<Component Subtype="Motor" Count="6" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Motor" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCargoAccessEnc</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+        <InventoryMaxVolume>0</InventoryMaxVolume>
+        <InventorySize>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </InventorySize>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>10</PCU>
+	</Definition>
+
+<!--Compatability Cargo Access-->
+
+	<Definition>
+		<Id>
+			<TypeId>Conveyor</TypeId>
+			<SubtypeId>HalfPassageCargoAccess_Large</SubtypeId>
+		</Id>
+		<Public>false</Public>
+		<DisplayName>Half Passage Cargo Access</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCargoAccess.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageCargoAccess.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="50" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+			<Component Subtype="Motor" Count="6" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Motor" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0.85" EndX="1" EndY="1" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCargoAccessConv</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>10</PCU>
+	</Definition>
+	<Definition>
+		<Id>
+			<TypeId>Conveyor</TypeId>
+			<SubtypeId>HalfPassageCargoAccessEnc_Large</SubtypeId>
+		</Id>
+		<Public>false</Public>
+		<DisplayName>Enclosed Half Passage Cargo Access</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCargoAccessEnc.dds</Icon>
+		<CubeSize>Large</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="50" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+			<Component Subtype="Motor" Count="6" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Motor" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.25" EndY="0.85" />
+				<MountPoint Side="Left" StartX="0" StartY="0.85" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0.75" StartY="0" EndX="1" EndY="0.85" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCargoAccessEncConv</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>10</PCU>
+	</Definition>
+
+<!--Small Grid Cargo Access-->
+
+	<Definition>
+		<Id>
+			<TypeId>Conveyor</TypeId>
+			<SubtypeId>HalfPassageCargoAccess_Small</SubtypeId>
+		</Id>
+		<Public>false</Public>
+		<DisplayName>Half Passage Cargo Access</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCargoAccess.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageCargoAccess.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="50" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+			<Component Subtype="Motor" Count="6" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Motor" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="0" StartY="4.25" EndX="5" EndY="5" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccess_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCargoAccessConv</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>10</PCU>
+	</Definition>
+	<Definition>
+		<Id>
+			<TypeId>Conveyor</TypeId>
+			<SubtypeId>HalfPassageCargoAccessEnc_Small</SubtypeId>
+		</Id>
+		<Public>false</Public>
+		<DisplayName>Enclosed Half Passage Cargo Access</DisplayName>
+		<Icon>Textures\Icons\HalfPassageCargoAccessEnc.dds</Icon>
+		<CubeSize>Small</CubeSize>
+		<BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="5" y="5" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+		<Model>Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc.mwm</Model>
+		<Components>
+			<Component Subtype="InteriorPlate" Count="50" />
+			<Component Subtype="Construction" Count="15" />
+			<Component Subtype="SmallTube" Count="36" />
+			<Component Subtype="Motor" Count="6" />
+			<Component Subtype="Construction" Count="10" />
+			<Component Subtype="InteriorPlate" Count="10" />
+		</Components>
+		<CriticalComponent Subtype="Motor" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Front" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1.25" EndY="4.25" />
+				<MountPoint Side="Left" StartX="0" StartY="4.25" EndX="5" EndY="5" />
+				<MountPoint Side="Left" StartX="3.75" StartY="0" EndX="5" EndY="4.25" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
+			</MountPoints>
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.33" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS1.mwm" />
+			<Model BuildPercentUpperBound="0.66" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS2.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\HalfExpansion\AVTECH_HalfPassageCargoAccessEnc_BS3.mwm" />
+		</BuildProgressModels>
+		<BlockPairName>HalfPassageCargoAccessEncConv</BlockPairName>
+		<MirroringZ>Y</MirroringZ>
+		<EdgeType>Light</EdgeType>
+		<BuildTimeSeconds>18</BuildTimeSeconds>
+		<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+		<DamagedSound>ParticleHeavyMech</DamagedSound>
+		<DestroyEffect>BlockDestroyed_Large</DestroyEffect>
+		<DestroySound>PoofExplosionCat3</DestroySound>
+		<GuiVisible>false</GuiVisible>
+		<PCU>10</PCU>
+	</Definition>
+
+	</CubeBlocks>
+</Definitions>
