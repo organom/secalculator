@@ -1,0 +1,50 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CategoryClasses>
+	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+      <Id>
+        <TypeId>GuiBlockCategoryDefinition</TypeId>
+        <SubtypeId/>
+      </Id>
+      <DisplayName>- More Passages (DS)</DisplayName>
+      <Name>z-mod-DS-MorePassages</Name>
+      <ItemIds>
+        <!--Passage Blocks-->
+		<string>CubeBlock/Passage2</string>
+		<string>CubeBlock/PassageLux</string>
+		<string>CubeBlock/Passage2Corner</string>
+		<string>CubeBlock/Passage2TIntersection</string>
+		<string>CubeBlock/Passage2Intersection</string>
+		<string>CubeBlock/Passage2StraightEnc</string>
+		<string>CubeBlock/Passage2CornerEnc</string>
+		<string>CubeBlock/Passage2TIntersectionEnc</string>
+		<string>CubeBlock/Passage2IntersectionEnc</string>
+		<string>CubeBlock/Passage2Wall</string>
+		<string>CubeBlock/PassageSciFi</string>
+		<string>CubeBlock/PassageSciFiEnc</string>
+		<string>AirVent/PassageSciFiVent</string>
+		<string>CargoContainer/PassageSciFiCargoAccess</string>
+		<string>TextPanel/PassageSciFiLCDStraight</string>
+		<string>InteriorLight/PassageSciFiLight</string>
+		<string>CubeBlock/PassageScifiCorner</string>
+		<string>CubeBlock/PassageSciFiIntersection</string>
+		<string>CubeBlock/PassageSciFiTjunction</string>
+		<string>CubeBlock/PassageSciFiWindow</string>
+		<string>CubeBlock/PassageSciFiWindowEnd</string>
+		<string>CubeBlock/PassageSciFiWall</string>
+		<string>CubeBlock/PassageSciFiWallCorner</string>
+		<string>CubeBlock/PassageSciFi2PillarWall</string>
+		<string>CubeBlock/PassageSciFi3PillarWall</string>
+		<string>CubeBlock/PassageSciFiRoof</string>
+		<string>InteriorLight/PassageSciFiRoofLight</string>
+		<string>InteriorLight/PassageSciFiLightEnclosed</string>
+		<string>CubeBlock/PassageSciFiGate</string>
+		<string>CubeBlock/PassageSciFiAirlock</string>
+		<string>CubeBlock/PassageSciFiStairs</string>
+		<string>InteriorLight/PassageSciFiStairsLight</string>
+		<string>CubeBlock/PassageSciFiWallEncOffset</string>
+		<string>MyProgrammableBlock/PassageSciFiProgrammableBlock</string>
+      </ItemIds>
+    </Category>
+  </CategoryClasses>
+</Definitions>
