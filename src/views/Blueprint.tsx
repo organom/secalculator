@@ -2,12 +2,14 @@ import {Stack} from 'react-bootstrap';
 import React, {useRef, useState} from 'react';
 import {parseSBCFile} from '../Helpers';
 
+const charDivider = '::';
+
 export default function Blueprint(props: { blocks: any[], components: any[] }) {
 
 	const [blueprintFileName, setBlueprintFileName] = useState<string | undefined>();
 	const [blueprint, setBlueprint] = useState<any>();
-	const [blueprintBlocks, setBlueprintBlocks] = useState<{block: string, count: number}[]>([]);
-	const [blueprintComponents, setBlueprintComponents] = useState<{component: string, count:number}[]>([]);
+	const [blueprintBlocks, setBlueprintBlocks] = useState<{block: string, type: string, count: number}[]>([]);
+	const [blueprintComponents, setBlueprintComponents] = useState<{component: string, type: string, count:number}[]>([]);
 
 	const inputRef = useRef<HTMLInputElement>(null);
 
@@ -29,37 +31,37 @@ export default function Blueprint(props: { blocks: any[], components: any[] }) {
 		setBlueprint(parsedContent.ShipBlueprints.ShipBlueprint || {});
 		console.log(parsedContent.ShipBlueprints.ShipBlueprint);
 
-		const blockCount = getBlockCount(parsedContent.ShipBlueprints.ShipBlueprint.CubeGrids.CubeGrid.CubeBlocks.MyObjectBuilder_CubeBlock);
-		setBlueprintBlocks(blockCount);
+		const blueprintBlocks = getBlockCount(parsedContent.ShipBlueprints.ShipBlueprint.CubeGrids.CubeGrid.CubeBlocks.MyObjectBuilder_CubeBlock);
+		setBlueprintBlocks(blueprintBlocks);
 
-		const componentCount = getComponentsCount(blockCount);
+		const componentCount = getComponentsCount(blueprintBlocks);
 		setBlueprintComponents(componentCount);
 	}
 
 	function getBlockCount(cubeBlocks: any) {
-		const groupdByType = groupBy(cubeBlocks, (x: any) => x.SubtypeName)
+		const groupdByType = groupBy(cubeBlocks, (x: any) => x['@_xsi:type'].replace('MyObjectBuilder_', '') + charDivider + x.SubtypeName)
 
 		return Object.keys(groupdByType).map((key) => {
 			if(!key) console.log(groupdByType[key]);
-			return {block: key, count: groupdByType[key].length}
+			return {block: key.split(charDivider)[1], type: key.split(charDivider)[0], count: groupdByType[key].length}
 		})
 	}
-	function getComponentsCount(blockCount: any[]) {
+	function getComponentsCount(blueprintBlocks: any[]) {
 		const componentList: {[k: string]: number} = {};
-		blockCount.forEach((block: any) => {
+		blueprintBlocks.forEach((block: any) => {
 			const realBlock = props.blocks.find((b: any) => b.Id.SubtypeId === block.block);
 			if(!realBlock) {
 				console.error('Failed to find block ' + block.block);
 			} else {
 				realBlock.Components.Component.forEach((component: any) => {
-					const type = component['@_Subtype'];
+					const type = component['@_Type'] + charDivider + component['@_Subtype'];
 					const existingValue = componentList[type] || 0;
 					componentList[type] = existingValue + (component['@_Count'] * block.count);
 				});
 			}
 		});
 		return Object.keys(componentList).map((key) => {
-			return {component: key, count: componentList[key]}
+			return {component: key.split(charDivider)[1], type: key.split(charDivider)[0], count: componentList[key]}
 		})
 	}
 
@@ -80,11 +82,11 @@ export default function Blueprint(props: { blocks: any[], components: any[] }) {
 						<Stack direction={'horizontal'} gap={5} className="mt-4 align-items-md-start">
 							<div>
 								<h4>Blocks:</h4>
-								{ blueprintBlocks.map(block => <div>{block.count} x {block.block}</div>) }
+								{ blueprintBlocks.map(block => <div>{block.count} x {block.block || block.type}</div>) }
 							</div>
 							<div>
 								<h4>Components required:</h4>
-								{ blueprintComponents.map(comp => <div>{comp.count} x {comp.component}</div>) }
+								{ blueprintComponents.map(comp => <div>{comp.count} x {comp.component || comp.type}</div>) }
 							</div>
 						</Stack>
 					</Stack>

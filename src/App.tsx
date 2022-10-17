@@ -22,7 +22,7 @@ async function loadSBCFiles(filesPath: string, files: string[]) {
 		});
 		const blob = new Blob([response.data], {type: response.headers['content-type']});
 		const parsedContent = await parseSBCFile(blob);
-		return parsedContent.CubeBlocks.Definition || parsedContent.Components.Component || [];
+		return parsedContent?.CubeBlocks?.Definition || parsedContent?.Components?.Component || [];
 	}
 
 	const promises = files.map(file => downloadAndParseBlockFile(`${filesPath}/${file}.sbc`));
@@ -30,16 +30,19 @@ async function loadSBCFiles(filesPath: string, files: string[]) {
 	return results.flat();
 }
 
-async function loadMod(filesPath: string, componentsFiles: string[], cubeBlocksFiles: string[], components: any[], blocks: any[]) {
-	const loaded = await Promise.all([loadSBCFiles(filesPath, cubeBlocksFiles), loadSBCFiles(filesPath, componentsFiles)]);
+async function loadMods(components: any[], blocks: any[], filesPath: string, modsConfig: { id: string; name: string, cubeBlockFiles: string[]; componentFiles: string[] }[]) {
+	const loadedBlocks = await Promise.all(modsConfig.map(x => x.cubeBlockFiles?.length > 0 && loadSBCFiles(filesPath + '/' + x.id + '/Data', x.cubeBlockFiles)));
 
 	// CubeBlocks
-	const blockIds = new Set(loaded[0].map(d => ({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})));
-	const newBlocks = [...blocks.filter(d => !blockIds.has({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})), ...loaded[0]];
+	const cubeBlocks = loadedBlocks.flat();
+	const blockIds = new Set(cubeBlocks.map(d => ({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})));
+	const newBlocks = [...blocks.filter(d => !blockIds.has({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})), ...cubeBlocks];
 
+	const loadedComponents = await Promise.all(modsConfig.map(x => x.componentFiles?.length > 0 && loadSBCFiles(filesPath + '/' + x.id + '/Data', x.componentFiles)));
 	// Components
-	const compIds = new Set(loaded[1].map(d => ({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})));
-	const newComponents = [...components.filter(d => !compIds.has({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})), ...loaded[1]];
+	const componentsBlocks = loadedComponents.flat();
+	const compIds = new Set(componentsBlocks.map(d => ({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})));
+	const newComponents = [...components.filter(d => !compIds.has({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})), ...componentsBlocks];
 
 	// load dummy object for components used but not defined
 	const extraComponents = newBlocks.map(x => x.Components.Component).flat();
@@ -54,16 +57,6 @@ async function loadMod(filesPath: string, componentsFiles: string[], cubeBlocksF
 	return {blocks: newBlocks, components: newComponents};
 }
 
-/*
-const groupBy = <T, K extends keyof any>(list: T[], getKey: (item: T) => K) =>
-	list.reduce((previous, currentItem) => {
-		const group = getKey(currentItem);
-		if (!previous[group]) previous[group] = [];
-		previous[group].push(currentItem);
-		return previous;
-	}, {} as Record<K, T[]>);
-*/
-
 export default function App() {
 	const basePath: string = 'https://organom.github.io/secalculator';
 	const [blocks, setBlocks] = useState<any[]>([]);
@@ -76,15 +69,26 @@ export default function App() {
 			loadSBCFiles(basePath + '/components', baseComponentsFiles).then(components => {
 				setComponents(components);
 
-				loadMod(basePath + '/mods/2618476231/Data/Scripts',
-					['Components'],
-					['CubeBlocks_Assembler',
-						'CubeBlocks_AtmosphericThruster', 'CubeBlocks_AtmosphericThrusterSciFi', 'CubeBlocks_Battery', 'CubeBlocks_Beacon', 'CubeBlocks_CargoContainerLarge',
-						'CubeBlocks_CargoContainerMedium', 'CubeBlocks_CargoContainerSmall', 'CubeBlocks_Detector',	'CubeBlocks_Drill',	'CubeBlocks_Grinder',
-						'CubeBlocks_Gyroscope',	'CubeBlocks_HydrogenEngine', 'CubeBlocks_HydrogenTank',	'CubeBlocks_HydrogenThruster', 'CubeBlocks_IndustrialPack',
-						'CubeBlocks_IonThruster', 'CubeBlocks_IonThrusterSciFi', 'CubeBlocks_JumpDrive', 'CubeBlocks_OxygenGenerator', 'CubeBlocks_Reactor',
-						'CubeBlocks_Refinery', 'CubeBlocks_SolarPanel', 'CubeBlocks_Spotlight', 'CubeBlocks_StoneIncinerator', 'CubeBlocks_Warfare2', 'CubeBlocks_WindTurbine'],
-					components, blocks).then(result => {
+				loadMods(components, blocks, basePath + '/mods',
+					[
+						{
+							id: '2618476231',
+							name: 'Skunkworks Tiered Tech',
+							componentFiles: ['Components'],
+							cubeBlockFiles:	['CubeBlocks_Assembler', 'CubeBlocks_AtmosphericThruster', 'CubeBlocks_AtmosphericThrusterSciFi', 'CubeBlocks_Battery', 'CubeBlocks_Beacon',
+								'CubeBlocks_CargoContainerLarge', 'CubeBlocks_CargoContainerMedium', 'CubeBlocks_CargoContainerSmall', 'CubeBlocks_Detector',	'CubeBlocks_Drill',
+								'CubeBlocks_Grinder', 'CubeBlocks_Gyroscope', 'CubeBlocks_HydrogenEngine', 'CubeBlocks_HydrogenTank', 'CubeBlocks_HydrogenThruster', 'CubeBlocks_IndustrialPack',
+								'CubeBlocks_IonThruster', 'CubeBlocks_IonThrusterSciFi', 'CubeBlocks_JumpDrive', 'CubeBlocks_OxygenGenerator', 'CubeBlocks_Reactor',
+								'CubeBlocks_Refinery', 'CubeBlocks_SolarPanel', 'CubeBlocks_Spotlight', 'CubeBlocks_StoneIncinerator', 'CubeBlocks_Warfare2', 'CubeBlocks_WindTurbine']
+						},
+					 	{
+							id: '2704991190',
+							name: 'MorePassages',
+							componentFiles: [],
+							cubeBlockFiles:	['CubeBlocks_MorePassages_Passage2', 'CubeBlocks_MorePassages_Passage3', 'CubeBlocks_MorePassages_Passage3Enc',
+								'CubeBlocks_MorePassages_Passage3EncLight', 'CubeBlocks_MorePassages_Passage3EncOffset', 'CubeBlocks_MorePassages_PassageLux']
+						}
+					]).then(result => {
 					setComponents(result.components);
 					setBlocks(result.blocks);
 					setLoading(false);
