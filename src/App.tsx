@@ -110,15 +110,15 @@ const skunkWorksModsConfig: { id: string; name: string, cubeBlockFiles: string[]
 		id: '2492169567',
 		name: '[MAD] More Conveyors No Angeled and Block Regroup',
 		componentFiles: [],
-		cubeBlockFiles:	['Large_CubeBlocks', 'Small_CubeBlocks']
+		cubeBlockFiles:	['Large/CubeBlocks', 'Small/CubeBlocks']
 	},
 	{
 		id: '1939935505',
 		name: 'AQD - Armor Expansion',
 		componentFiles: [],
-		cubeBlockFiles:	['AQD_Corner_Split_2x1x1_Base.sbc', 'AQD_Corner_Split_2x1x1_Tip.sbc', 'AQD_Slab_Half_Corner_Split.sbc',
-			'AQD_Slope3x1.sbc', 'AQD_Slope3x1_Corner.sbc', 'AQD_Slope3x1_InvCorner.sbc', 'AQD_Slope4x1.sbc',
-			'AQD_Slope4x1_Corner.sbc', 'AQD_Slope4x1_InvCorner.sbc']
+		cubeBlockFiles:	['AQD_Corner_Split_2x1x1_Base', 'AQD_Corner_Split_2x1x1_Tip', 'AQD_Slab_Half_Corner_Split',
+			'AQD_Slope3x1', 'AQD_Slope3x1_Corner', 'AQD_Slope3x1_InvCorner', 'AQD_Slope4x1',
+			'AQD_Slope4x1_Corner', 'AQD_Slope4x1_InvCorner']
 	},
 	{
 		id: '2799659022',
