@@ -30,6 +30,7 @@ async function loadSBCFiles(filesPath: string, files: string[]) {
 	return results.flat();
 }
 
+/*
 const groupBy = <T, K extends keyof any>(list: T[], getKey: (item: T) => K) =>
 	list.reduce((previous, currentItem) => {
 		const group = getKey(currentItem);
@@ -37,6 +38,7 @@ const groupBy = <T, K extends keyof any>(list: T[], getKey: (item: T) => K) =>
 		previous[group].push(currentItem);
 		return previous;
 	}, {} as Record<K, T[]>);
+*/
 
 export default function App() {
 	const basePath: string = 'https://organom.github.io/secalculator';
@@ -56,7 +58,7 @@ export default function App() {
 		const compIds = new Set(loaded[1].map(d => ({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})));
 		const newComponents = [...components.filter(d => !compIds.has({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})), ...loaded[1]];
 
-		// load dummy for components used but not defined in the mod
+		// load dummy object for components used but not defined
 		const extraComponents = newBlocks.map(x => x.Components.Component).flat();
 		const uniqueExtraComponents = [...new Set(extraComponents.map(t => t['@_Subtype']))];
 		uniqueExtraComponents.forEach(c => {
