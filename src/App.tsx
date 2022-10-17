@@ -94,7 +94,8 @@ export default function App() {
 					const uniqueExtraComponents = [...new Set(extraComponents.map(t => t['@_Subtype']))];
 					uniqueExtraComponents.forEach(c => {
 						if (!components.some(d => d.Id.SubtypeId === c)) {
-							console.error(`Component ${c} not found`);
+							console.error(`Component ${c} not found, creating dummy`);
+							components.push({Id: {SubtypeId: c, TypeId: 'Component'}});
 						}
 					});
 					setComponents(components);
