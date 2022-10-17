@@ -143,6 +143,36 @@ const skunkWorksModsConfig: { id: string; name: string, cubeBlockFiles: string[]
 		name: 'Store Block - Create your own Trade Station',
 		componentFiles: ['Components'],
 		cubeBlockFiles:	['CubeBlocks/CubeBlocks_Economy']
+	},
+	{
+		id: '1962611090',
+		name: 'First Aid Station (No Respawn)',
+		componentFiles: [],
+		cubeBlockFiles:	['FASNR_CubeBlocks']
+	},
+	{
+		id: '1962611090',
+		name: 'First Aid Station (No Respawn)',
+		componentFiles: [],
+		cubeBlockFiles:	['FASNR_CubeBlocks']
+	},
+	{
+		id: '2493525535',
+		name: 'HydrogenThing',
+		componentFiles: ['Components'],
+		cubeBlockFiles:	[]
+	},
+	{
+		id: '2806919267',
+		name: 'Rebels Gates',
+		componentFiles: [],
+		cubeBlockFiles:	['CubeBlocks_RebelsGates']
+	},
+	{
+		id: '1654963857',
+		name: 'MA HeavyBridge',
+		componentFiles: [],
+		cubeBlockFiles:	['MA_HeavyBridge_CubeBlocks']
 	}
 ];
 
