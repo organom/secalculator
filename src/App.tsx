@@ -30,6 +30,30 @@ async function loadSBCFiles(filesPath: string, files: string[]) {
 	return results.flat();
 }
 
+async function loadMod(filesPath: string, componentsFiles: string[], cubeBlocksFiles: string[], components: any[], blocks: any[]) {
+	const loaded = await Promise.all([loadSBCFiles(filesPath, cubeBlocksFiles), loadSBCFiles(filesPath, componentsFiles)]);
+
+	// CubeBlocks
+	const blockIds = new Set(loaded[0].map(d => ({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})));
+	const newBlocks = [...blocks.filter(d => !blockIds.has({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})), ...loaded[0]];
+
+	// Components
+	const compIds = new Set(loaded[1].map(d => ({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})));
+	const newComponents = [...components.filter(d => !compIds.has({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})), ...loaded[1]];
+
+	// load dummy object for components used but not defined
+	const extraComponents = newBlocks.map(x => x.Components.Component).flat();
+	const uniqueExtraComponents = [...new Set(extraComponents.map(t => t['@_Subtype']))];
+	uniqueExtraComponents.forEach(c => {
+		if (!newComponents.some(d => d.Id.SubtypeId === c)) {
+			console.error(`Component ${c} not found, creating dummy`);
+			newComponents.push({Id: {SubtypeId: c, TypeId: 'Component'}});
+		}
+	});
+
+	return {blocks: newBlocks, components: newComponents};
+}
+
 /*
 const groupBy = <T, K extends keyof any>(list: T[], getKey: (item: T) => K) =>
 	list.reduce((previous, currentItem) => {
@@ -46,47 +70,29 @@ export default function App() {
 	const [components, setComponents] = useState<any[]>([]);
 	const [loading, setLoading] = useState(true);
 
-	async function loadMod(filesPath: string, componentsFiles: string[], cubeBlocksFiles: string[]) {
-		const loaded = await Promise.all([loadSBCFiles(filesPath, cubeBlocksFiles), loadSBCFiles(filesPath, componentsFiles)]);
-
-		// CubeBlocks
-		const blockIds = new Set(loaded[0].map(d => ({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})));
-		const newBlocks = [...blocks.filter(d => !blockIds.has({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})), ...loaded[0]];
-		setBlocks(newBlocks);
-
-		// Components
-		const compIds = new Set(loaded[1].map(d => ({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})));
-		const newComponents = [...components.filter(d => !compIds.has({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})), ...loaded[1]];
-
-		// load dummy object for components used but not defined
-		const extraComponents = newBlocks.map(x => x.Components.Component).flat();
-		const uniqueExtraComponents = [...new Set(extraComponents.map(t => t['@_Subtype']))];
-		uniqueExtraComponents.forEach(c => {
-			if (!newComponents.some(d => d.Id.SubtypeId === c)) {
-				console.error(`Component ${c} not found, creating dummy`);
-				newComponents.push({Id: {SubtypeId: c, TypeId: 'Component'}});
-			}
-		});
-		setComponents(newComponents);
-	}
-
 	useEffect(() => {
 		loadSBCFiles(basePath + '/cubeblocks', baseCubeBlocksFiles).then(blocks => {
 			setBlocks(blocks);
 			loadSBCFiles(basePath + '/components', baseComponentsFiles).then(components => {
 				setComponents(components);
 
-				loadMod(basePath + '/mods/2618476231/Data/Scripts', ['Components'], ['CubeBlocks_Assembler',
-					'CubeBlocks_AtmosphericThruster', 'CubeBlocks_AtmosphericThrusterSciFi', 'CubeBlocks_Battery', 'CubeBlocks_Beacon', 'CubeBlocks_CargoContainerLarge',
-					'CubeBlocks_CargoContainerMedium', 'CubeBlocks_CargoContainerSmall', 'CubeBlocks_Detector',	'CubeBlocks_Drill',	'CubeBlocks_Grinder',
-					'CubeBlocks_Gyroscope',	'CubeBlocks_HydrogenEngine', 'CubeBlocks_HydrogenTank',	'CubeBlocks_HydrogenThruster', 'CubeBlocks_IndustrialPack',
-					'CubeBlocks_IonThruster', 'CubeBlocks_IonThrusterSciFi', 'CubeBlocks_JumpDrive', 'CubeBlocks_OxygenGenerator', 'CubeBlocks_Reactor',
-					'CubeBlocks_Refinery', 'CubeBlocks_SolarPanel', 'CubeBlocks_Spotlight', 'CubeBlocks_StoneIncinerator', 'CubeBlocks_Warfare2', 'CubeBlocks_WindTurbine']).then(() => {
+				loadMod(basePath + '/mods/2618476231/Data/Scripts',
+					['Components'],
+					['CubeBlocks_Assembler',
+						'CubeBlocks_AtmosphericThruster', 'CubeBlocks_AtmosphericThrusterSciFi', 'CubeBlocks_Battery', 'CubeBlocks_Beacon', 'CubeBlocks_CargoContainerLarge',
+						'CubeBlocks_CargoContainerMedium', 'CubeBlocks_CargoContainerSmall', 'CubeBlocks_Detector',	'CubeBlocks_Drill',	'CubeBlocks_Grinder',
+						'CubeBlocks_Gyroscope',	'CubeBlocks_HydrogenEngine', 'CubeBlocks_HydrogenTank',	'CubeBlocks_HydrogenThruster', 'CubeBlocks_IndustrialPack',
+						'CubeBlocks_IonThruster', 'CubeBlocks_IonThrusterSciFi', 'CubeBlocks_JumpDrive', 'CubeBlocks_OxygenGenerator', 'CubeBlocks_Reactor',
+						'CubeBlocks_Refinery', 'CubeBlocks_SolarPanel', 'CubeBlocks_Spotlight', 'CubeBlocks_StoneIncinerator', 'CubeBlocks_Warfare2', 'CubeBlocks_WindTurbine'],
+					components, blocks).then(result => {
+					setComponents(result.components);
+					setBlocks(result.blocks);
 					setLoading(false);
 				});
+
 			});
 		});
-	})
+	}, [basePath])
 
 	return (
 		<div>
