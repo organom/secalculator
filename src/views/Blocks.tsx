@@ -15,6 +15,7 @@ export default function Blocks(props: { blocks: any[] }) {
 	const columns: TypeColumn[] = [
 		{ name: 'Id.SubtypeId', header: 'Subtype', minWidth: 20, defaultFlex: 1, render: ({ data }) => data.Id.SubtypeId },
 		{ name: 'Id.TypeId', header: 'Type', minWidth: 20, defaultFlex: 1, render: ({ data }) => data.Id.TypeId },
+		{ name: 'DisplayName', header: 'Display Name', minWidth: 20, defaultFlex: 1, render: ({ data }) => data.DisplayName.replace('DisplayName_Item_', '').replace('DisplayName_Block_', '')},
 		{ name: 'CubeSize', header: 'Size', minWidth: 20, defaultFlex: 1 },
 		{ name: 'PCU', header: 'PCU', type: 'number', filterEditor: NumberFilter, minWidth: 20, defaultFlex: 1 },
 		{ name: 'BuildTimeSeconds', header: 'Build(sec)', type: 'number', filterEditor: NumberFilter, minWidth: 20, defaultFlex: 1 },
@@ -26,6 +27,7 @@ export default function Blocks(props: { blocks: any[] }) {
 	const filterValue: TypeFilterValue = [
 		{ name: 'Id.SubtypeId', operator: 'contains', type: 'string', value: '', fn: ({ value, filterValue, data }) => data.Id.SubtypeId.toLowerCase().includes(filterValue.toLowerCase()) },
 		{ name: 'Id.TypeId', operator: 'contains', type: 'string', value: '', fn: ({ value, filterValue, data }) => data.Id.TypeId.toLowerCase().includes(filterValue.toLowerCase()) },
+		{ name: 'DisplayName', operator: 'contains', type: 'string', value: ''},
 		{ name: 'CubeSize', operator: 'startsWith', type: 'string', value: '' },
 		{ name: 'PCU', operator: 'gte', type: 'number', value: number.emptyValue },
 		{ name: 'BuildTimeSeconds', operator: 'gte', type: 'number', value: number.emptyValue },

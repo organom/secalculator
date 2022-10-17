@@ -9,7 +9,7 @@ export default function Components(props: { components: any[] }) {
 
 	const columns: TypeColumn[] = [
 		{ name: 'Id.SubtypeId', header: 'Subtype', minWidth: 20, defaultFlex: 2, render: ({ data }) => data.Id.SubtypeId },
-		//{ name: 'DisplayName', header: 'Display Name', minWidth: 20, defaultFlex: 1, render: ({ data }) => data.DisplayName.replace('DisplayName_Item_', '').replace('DisplayName_Block_', '')},
+		{ name: 'DisplayName', header: 'Display Name', minWidth: 20, defaultFlex: 1, render: ({ data }) => data.DisplayName.replace('DisplayName_Item_', '').replace('DisplayName_Block_', '')},
 		{ name: 'Mass', header: 'Mass', minWidth: 20, defaultFlex: 1 },
 		{ name: 'Volume', header: 'Volume', minWidth: 20, defaultFlex: 1 },
 		{ name: 'MaxIntegrity', header: 'MaxIntegrity', minWidth: 20, defaultFlex: 1 },

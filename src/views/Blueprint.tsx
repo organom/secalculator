@@ -9,25 +9,25 @@ interface BlueprintData {
 	OwnerSteamId: string;
 	DLC: string[];
 }
-interface GridBlockCount {
-	block: string;
+
+interface GridCount {
 	type: string;
-	count: number;
-}
-interface GridComponentCount {
-	component: string;
-	type: string;
+	subtype: string;
 	count: number;
 }
 interface BlueprintGrids {
 	DisplayName: string;
 	EntityId: string;
 	GridSizeEnum: string;
-	BlocksCount: GridBlockCount[];
-	ComponentsCount: GridComponentCount[];
+	BlocksCount: GridCount[];
+	ComponentsCount: GridCount[];
 }
 
 const charDivider = '::';
+
+function ensureArray(element: any | any[]): any[] {
+	return Array.isArray(element) ? element : [element];
+}
 
 export default function Blueprint(props: { blocks: any[], components: any[] }) {
 	const [blueprintFileName, setBlueprintFileName] = useState<string | undefined>();
@@ -54,10 +54,7 @@ export default function Blueprint(props: { blocks: any[], components: any[] }) {
 		const blueprint = parsedContent.ShipBlueprints.ShipBlueprint
 		setBlueprint(blueprint);
 
-		const grids = blueprint.CubeGrids.CubeGrid;
-		const blueprintGrids = Array.isArray(grids) ? grids : [grids];
-
-		setBlueprintGrids(blueprintGrids.map(grid => {
+		setBlueprintGrids(ensureArray(blueprint.CubeGrids.CubeGrid).map(grid => {
 			const blocksCount = getBlockCount(grid.CubeBlocks.MyObjectBuilder_CubeBlock);
 			grid['BlocksCount'] = blocksCount;
 			grid['ComponentsCount'] = getComponentsCount(blocksCount);
@@ -70,25 +67,24 @@ export default function Blueprint(props: { blocks: any[], components: any[] }) {
 
 		return Object.keys(groupdByType).map((key) => {
 			if(!key) console.error('Block key is empty for block:', groupdByType[key]);
-			return {block: key.split(charDivider)[1], type: key.split(charDivider)[0], count: groupdByType[key].length}
+			return {subtype: key.split(charDivider)[1], type: key.split(charDivider)[0], count: groupdByType[key].length}
 		})
 	}
 	function getComponentsCount(blueprintBlocks: any[]) {
 		const componentList: {[k: string]: number} = {};
 		blueprintBlocks.forEach((block: any) => {
-			const realBlock = props.blocks.find((b: any) => b.Id.SubtypeId === block.block);
+			const realBlock = props.blocks.find((b: any) => b.Id.SubtypeId === block.subtype && (b.Id.TypeId === block.type || b.Id.TypeId === 'MyObjectBuilder_' + block.type));
 			if(!realBlock) {
-				console.error('Failed to find block ' + block.block);
+				console.error('Failed to find block ' + block.subtype + ' of type ' + block.type);
 			} else {
-				realBlock.Components.Component.forEach((component: any) => {
+				ensureArray(realBlock.Components.Component).forEach((component: any) => {
 					const type = component['@_Type'] + charDivider + component['@_Subtype'];
-					const existingValue = componentList[type] || 0;
-					componentList[type] = existingValue + (component['@_Count'] * block.count);
+					componentList[type] = (componentList[type] || 0) + (component['@_Count'] * block.count);
 				});
 			}
 		});
 		return Object.keys(componentList).map((key) => {
-			return {component: key.split(charDivider)[1], type: key.split(charDivider)[0], count: componentList[key]}
+			return {subtype: key.split(charDivider)[1], type: key.split(charDivider)[0], count: componentList[key]}
 		})
 	}
 
@@ -117,11 +113,11 @@ export default function Blueprint(props: { blocks: any[], components: any[] }) {
 							<Stack direction={'horizontal'} gap={5} className="mt-4 align-items-md-start">
 								<div>
 									<h4>Blocks:</h4>
-									{ grid.BlocksCount.map(block => <div key={block.block || block.type}>{block.count} x {block.block || block.type}</div>) }
+									{ grid.BlocksCount.map(block => <div key={block.subtype || block.type}>{block.count} x {block.subtype || block.type}</div>) }
 								</div>
 								<div>
 									<h4>Components required:</h4>
-									{ grid.ComponentsCount.map(comp => <div key={comp.component || comp.type}>{comp.count} x {comp.component || comp.type}</div>) }
+									{ grid.ComponentsCount.map(comp => <div key={comp.subtype || comp.type}>{comp.count} x {comp.subtype || comp.type}</div>) }
 								</div>
 							</Stack>
 						</div>
