@@ -88,6 +88,12 @@ export default function App() {
 							cubeBlockFiles:	['MarketProjector']
 						},
 						{
+							id: '2530716039',
+							name: 'Aryx Weapon Enterprises [WeaponCore]',
+							componentFiles: ['Aryx_AWE_Components'],
+							cubeBlockFiles:	['Aryx_AWE_CubeBlocks']
+						},
+						{
 							id: '2704991190',
 							name: 'MorePassages',
 							componentFiles: [],
