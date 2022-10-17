@@ -17,16 +17,26 @@ async function downloadAndParseBlockFile(url: string) {
 	return parsedContent.CubeBlocks.Definition || [];
 }
 
+
+async function loadBaseComponents(filesPath: string) {
+	const vanillaFiles = [ 'Components', 'Components_Economy']
+	const promises = vanillaFiles.map(file => downloadAndParseBlockFile(`${filesPath}/components/${file}.sbc`));
+	const results = await Promise.all(promises);
+	return results.flat();
+}
+
 async function loadBaseBlocks(filesPath: string) {
-	/*
 	const vanillaFiles = [ 'CubeBlocks', 'CubeBlocks_Armor', 'CubeBlocks_Armor_2', 'CubeBlocks_Automation', 'CubeBlocks_Communications', 'CubeBlocks_Control', 'CubeBlocks_DecorativePack',
 		'CubeBlocks_DecorativePack2', 'CubeBlocks_Doors', 'CubeBlocks_Economy', 'CubeBlocks_Energy', 'CubeBlocks_Extras', 'CubeBlocks_Frostbite', 'CubeBlocks_Gravity', 'CubeBlocks_Interiors',
 		'CubeBlocks_LCDPanels', 'CubeBlocks_Lights', 'CubeBlocks_Logistics', 'CubeBlocks_Mechanical', 'CubeBlocks_Medical', 'CubeBlocks_Production', 'CubeBlocks_ScrapRacePack',
 		'CubeBlocks_SparksOfTheFuturePack', 'CubeBlocks_Symbols', 'CubeBlocks_Thrusters', 'CubeBlocks_Tools', 'CubeBlocks_Utility', 'CubeBlocks_Warfare1', 'CubeBlocks_Weapons', 'CubeBlocks_Wheels',
 		'CubeBlocks_Windows', 'CubeBlocks_ArmorPanels', 'CubeBlocks_Armor_3', 'CubeBlocks_IndustrialPack', 'CubeBlocks_Warfare2']
-	const promises = vanillaFiles.map(file => downloadAndParseBlockFile(`${filesPath}/Vanilla/${file}.sbc`));
-	*/
+	const promises = vanillaFiles.map(file => downloadAndParseBlockFile(`${filesPath}/cubeblocks/Vanilla/${file}.sbc`));
+	const results = await Promise.all(promises);
+	return results.flat();
+}
 
+async function loadSkunkWorksBlocks(filesPath: string) {
 	const skunkWorksFiles = [ 'Aryx_AWE_CubeBlocks', 'CubeBlocks_MorePassages_PassageLux', 'CubeBlocks_Assembler', 'CubeBlocks_OxygenGenerator', 'CubeBlocks_AtmosphericThruster',
 		'CubeBlocks_PassageIntersections_Expansion', 'CubeBlocks_AtmosphericThrusterSciFi', 'CubeBlocks_PassageIntersections_HalfPassageExpansion', 'CubeBlocks_Battery',
 		'CubeBlocks_PassageIntersections_HalfPassages', 'CubeBlocks_Beacon', 'CubeBlocks_PassageIntersections_Lighted', 'CubeBlocks_CargoContainerLarge', 'CubeBlocks_PassageIntersections_LightedHalfPassages',
@@ -37,14 +47,20 @@ async function loadBaseBlocks(filesPath: string) {
 		'CubeBlocks_JumpDrive', 'CubeBlocks_Weapons_2', 'CubeBlocks_LargeConveyors', 'CubeBlocks_Weapons', 'CubeBlocks_Logistics', 'CubeBlocks_WindTurbine', 'CubeBlocks_MorePassages_Passage2', 'FASNR_CubeBlocks',
 		'CubeBlocks_MorePassages_Passage3', 'MA_Buster_Cubeblocks', 'CubeBlocks_MorePassages_Passage3Enc', 'MA_HeavyBridge_CubeBlocks', 'CubeBlocks_MorePassages_Passage3EncLight', 'ZardosConnector_CubeBlocks',
 		'CubeBlocks_MorePassages_Passage3EncOffset' ];
-	const promises = skunkWorksFiles.map(file => downloadAndParseBlockFile(`${filesPath}/SkunkWorks/${file}.sbc`));
-
+	const promises = skunkWorksFiles.map(file => downloadAndParseBlockFile(`${filesPath}/cubeblocks/SkunkWorks/${file}.sbc`));
 	const results = await Promise.all(promises);
 	return results.flat();
 }
+const groupBy = <T, K extends keyof any>(list: T[], getKey: (item: T) => K) =>
+	list.reduce((previous, currentItem) => {
+		const group = getKey(currentItem);
+		if (!previous[group]) previous[group] = [];
+		previous[group].push(currentItem);
+		return previous;
+	}, {} as Record<K, T[]>);
 
 export default function App() {
-	const filesPath: string = 'https://organom.github.io/secalculator/cubeblocks';
+	const filesPath: string = 'https://organom.github.io/secalculator';
 	const [blocks, setBlocks] = useState<any[]>([]);
 	const [components, setComponents] = useState<any[]>([]);
 	const [loading, setLoading] = useState(true);
@@ -52,15 +68,34 @@ export default function App() {
 	useEffect(() => {
 		loadBaseBlocks(filesPath).then(blocks => {
 			setBlocks(blocks);
-			const components = blocks.map(x => x.Components.Component).flat();
-			const uniqueComponents = [...new Set(components.map(t => t['@_Subtype']))];
-			setComponents(uniqueComponents.map(t => {
-				return {
-					Code: t,
-					DisplayName: t.replace(/([A-Z])/g, ' $1')
-				};
-			}));
-			setLoading(false);
+			loadSkunkWorksBlocks(filesPath).then(skunkWorksBlocks => {
+				const ids = new Set(skunkWorksBlocks.map(d => ({SubtypeId: d.Id.SubtypeId, TypeId: d.Id.TypeId})));
+				const newBlocks = [...blocks.filter(d => !ids.has({SubtypeId: d.Id.SubtypeId, TypeId: d.Id.TypeId})), ...skunkWorksBlocks];
+
+				console.log('Blocks');
+				const test = groupBy(newBlocks, (x: any) => x.Id.SubtypeId);
+				for (const property in test) {
+					if(!property) {
+						console.log(test[property])
+						continue;
+					}
+					test[property].length > 1 && console.log(property, test[property].map(d => d.Id.TypeId));
+				}
+
+				setBlocks(newBlocks);
+				loadBaseComponents(filesPath).then(components => {
+					const extraComponents = blocks.map(x => x.Components.Component).flat();
+					const uniqueExtraComponents = [...new Set(extraComponents.map(t => t['@_Subtype']))];
+					uniqueExtraComponents.forEach(c => {
+						if (!components.some(d => d.Id.SubtypeId === c && d.Id.TypeId === 'Component')) {
+							console.error(`Component ${c} not found`);
+						}
+					});
+
+					setComponents(components);
+					setLoading(false);
+				});
+			});
 		});
 	}, [filesPath])
 

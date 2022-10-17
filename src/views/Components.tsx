@@ -7,8 +7,8 @@ export default function Components(props: { components: any[] }) {
 	//const [loading, setLoading] = useState<boolean>(false);
 
 	const columns = [
-		{ name: 'Code', header: 'Code', minWidth: 20, defaultFlex: 1 },
-		{ name: 'DisplayName', header: 'Display Name', minWidth: 20, defaultFlex: 1 }
+		{ name: 'Id.SubtypeId', header: 'SubtypeId', minWidth: 20, defaultFlex: 1 },
+		{ name: 'Id.TypeId', header: 'TypeId', minWidth: 20, defaultFlex: 1 }
 	]
 	const gridStyle = { minHeight: 700 }
 
