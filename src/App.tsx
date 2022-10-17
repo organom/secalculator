@@ -81,7 +81,13 @@ export default function App() {
 								'CubeBlocks_IonThruster', 'CubeBlocks_IonThrusterSciFi', 'CubeBlocks_JumpDrive', 'CubeBlocks_OxygenGenerator', 'CubeBlocks_Reactor',
 								'CubeBlocks_Refinery', 'CubeBlocks_SolarPanel', 'CubeBlocks_Spotlight', 'CubeBlocks_StoneIncinerator', 'CubeBlocks_Warfare2', 'CubeBlocks_WindTurbine']
 						},
-					 	{
+						{
+							id: '2015575529',
+							name: 'HangarMarket (Quantum Hangar)',
+							componentFiles: [],
+							cubeBlockFiles:	['MarketProjector']
+						},
+						{
 							id: '2704991190',
 							name: 'MorePassages',
 							componentFiles: [],
