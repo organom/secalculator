@@ -137,6 +137,12 @@ const skunkWorksModsConfig: { id: string; name: string, cubeBlockFiles: string[]
 		name: 'Interface Block',
 		componentFiles: [],
 		cubeBlockFiles:	['AVTECH_Interface']
+	},
+	{
+		id: '2494377866',
+		name: 'Store Block - Create your own Trade Station',
+		componentFiles: ['Components'],
+		cubeBlockFiles:	['CubeBlocks/CubeBlocks_Economy']
 	}
 ];
 
@@ -166,7 +172,6 @@ async function loadMods(components: any[], blocks: any[], filesPath: string, mod
 	// Components
 	const loadedComponents = await Promise.all(modsConfig.map(x => x.componentFiles?.length > 0 ? loadSBCFiles(filesPath + '/' + x.id + '/Data', x.componentFiles) : undefined).filter(x => x));
 	const componentsBlocks = loadedComponents.flat();
-	console.log(componentsBlocks)
 	const compIds = new Set(componentsBlocks.map(d => ({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})));
 	const newComponents = [...components.filter(d => !compIds.has({TypeId: d.Id.TypeId, SubtypeId: d.Id.SubtypeId})), ...componentsBlocks];
 
