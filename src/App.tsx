@@ -17,6 +17,7 @@ export default function App() {
 	const [selectedCollection, setSelectedCollection] = useState<number>( (storedSelectedCollection && Number(storedSelectedCollection)) || VANILLA_ID);
 
 	useEffect(() => {
+		setLoading(true);
 		loadVanilla().then(vanillaResult => {
 			// Collections are always loaded on top of Vanilla Items
 			if(selectedCollection !== VANILLA_ID) {
