@@ -6,21 +6,21 @@ import Blueprint from './views/Blueprint';
 import Blocks from './views/Blocks';
 import Components from './views/Components';
 import {loadCollection} from './helpers';
-import {SE_COLLECTIONS} from './config';
+import {SE_COLLECTIONS, VANILLA_ID} from './config';
 
 export default function App() {
 	const [blocks, setBlocks] = useState<any[]>([]);
 	const [components, setComponents] = useState<any[]>([]);
 	const [loading, setLoading] = useState(true);
-	const useCollection = 2832253413;
+	const useCollection = 2832253413; // TODO: move into selector and store on cookie
 
 	useEffect(() => {
 		// -1 is special case for vanilla collection -- always load
-		loadCollection([], [], SE_COLLECTIONS.filter(x => x.id === -1)[0])
+		loadCollection(SE_COLLECTIONS.filter(x => x.id === VANILLA_ID)[0])
 			.then(result => {
-				// Collections are always loaded on top of Vanilla elements
+				// Collections are always loaded on top of Vanilla Items
 				if(useCollection) {
-					loadCollection(result.cubeBlocks, result.components, SE_COLLECTIONS.filter(x => x.id === useCollection)[0]).then(collectionResult => {
+					loadCollection(SE_COLLECTIONS.filter(x => x.id === useCollection)[0], result.components, result.cubeBlocks).then(collectionResult => {
 						setComponents(collectionResult.components);
 						setBlocks(collectionResult.cubeBlocks);
 						setLoading(false);

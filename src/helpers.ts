@@ -27,8 +27,8 @@ export async function loadSBCFiles(filesPath: string, files: string[]) {
 	return results.flat();
 }
 
-export async function loadCollection(existingComponents: any[], existingCubeBlocks: any[], collection: collectionDefinition) {
-	const items = SE_ITEMS.filter(x => collection.items.includes(x.id));
+export async function loadCollection(collection: collectionDefinition, existingComponents: any[] = [], existingCubeBlocks: any[] = []) {
+	const items = SE_ITEMS.filter(x => collection.itemIds.includes(x.id));
 
 	// CubeBlocks
 	const loadedBlocks = await Promise.all(items.map(x => x.cubeBlockFiles?.length > 0 ? loadSBCFiles(collection.downloadBaseUrl + '/' + x.id + '/Data', x.cubeBlockFiles) : undefined).filter(x => x));

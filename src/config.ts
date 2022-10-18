@@ -1,7 +1,7 @@
 export interface collectionDefinition{
 	id: number;
 	name: string;
-	items: number[];
+	itemIds: number[];
 	downloadBaseUrl: string;
 }
 
@@ -12,18 +12,19 @@ export interface itemDefinition{
 	componentFiles: string[];
 }
 
+export const VANILLA_ID = -1000;
 export const SE_COLLECTIONS: collectionDefinition[] = [
 	{
-		id: -1,
+		id: VANILLA_ID,
 		name: 'Vanilla',
 		downloadBaseUrl: 'https://organom.github.io/secalculator/vanilla',
-		items: [-1]
+		itemIds: [VANILLA_ID]
 	},
 	{
 		id: 2832253413,
-		name: 'SkunkWorks 4.0 Collection',
+		name: 'SkunkWorks 4.0',
 		downloadBaseUrl: 'https://organom.github.io/secalculator/workshop',
-		items: [2618476231, 1712885149, 1906186459, 1712884109, 1931509062, 2741701803, 2015575529, 2530716039,
+		itemIds: [2618476231, 1712885149, 1906186459, 1712884109, 1931509062, 2741701803, 2015575529, 2530716039,
 			2704991190, 2783691448, 2771417713, 1864380341, 1359954841, 946724937, 2492169567, 1939935505, 2799659022,
 			2449073590, 2433117767, 1962611090, 1962611090, 2493525535, 2806919267, 1654963857, 1365616918]
 	}
@@ -31,7 +32,7 @@ export const SE_COLLECTIONS: collectionDefinition[] = [
 
 export const SE_ITEMS: itemDefinition[] = [
 	{
-		id: -1,
+		id: VANILLA_ID,
 		name: 'Vanilla',
 		componentFiles: [ 'Components', 'Components_Economy'],
 		cubeBlockFiles:	[ 'CubeBlocks', 'CubeBlocks_Armor', 'CubeBlocks_Armor_2', 'CubeBlocks_Automation', 'CubeBlocks_Communications', 'CubeBlocks_Control', 'CubeBlocks_DecorativePack',
