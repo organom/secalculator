@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>Passage2Corner</SubtypeId>
+			</Id>
+			<DisplayName>Passage 2 Corner</DisplayName>
+			<Icon>Textures\Icons\Passage2StraightEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage2\Passage2Corner.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>Passage2Corner</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>Passage2CornerEnc</SubtypeId>
+			</Id>
+			<DisplayName>Passage 2 Corner Enclosed</DisplayName>
+			<Icon>Textures\Icons\Passage2StraightEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage2\Passage2CornerEnc.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>Passage2CornerEnc</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>Passage2Intersection</SubtypeId>
+			</Id>
+			<DisplayName>Passage 2 4-Way Intersection</DisplayName>
+			<Icon>Textures\Icons\Passage2StraightEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage2\Passage2Intersection.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>Passage2Intersection</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>Passage2IntersectionEnc</SubtypeId>
+			</Id>
+			<DisplayName>Passage 2 4-Way Intersection Enclosed</DisplayName>
+			<Icon>Textures\Icons\Passage2StraightEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage2\Passage2IntersectionEnc.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>Passage2IntersectionEnc</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>Passage2StraightEnc</SubtypeId>
+			</Id>
+			<DisplayName>Passage 2 Enclosed</DisplayName>
+			<Icon>Textures\Icons\Passage2StraightEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage2\Passage2StraightEnc.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>Passage2StraightEnc</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>Passage2TIntersection</SubtypeId>
+			</Id>
+			<DisplayName>Passage 2 T-Intersection</DisplayName>
+			<Icon>Textures\Icons\Passage2StraightEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage2\Passage2TIntersection.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>Passage2TIntersection</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>Passage2TIntersectionEnc</SubtypeId>
+			</Id>
+			<DisplayName>Passage 2 T-Intersection Enclosed</DisplayName>
+			<Icon>Textures\Icons\Passage2StraightEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage2\Passage2TIntersectionEnc.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>Passage2TIntersectionEnc</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+
+	</CubeBlocks>
+</Definitions>

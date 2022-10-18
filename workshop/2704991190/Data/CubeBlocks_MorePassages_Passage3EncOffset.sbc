@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>PassageSciFiWallEncOffset</SubtypeId>
+			</Id>
+			<DisplayName>Passage 3 Wall Enclosed Offset</DisplayName>
+			<Icon>Textures\Icons\PassageSciFiWallEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage3E\PassageSciFiWallEnclosedOffset.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="64" />
+				<Component Subtype="Construction" Count="20" />
+				<Component Subtype="SmallTube" Count="40" />
+				<Component Subtype="MetalGrid" Count="5" />
+				<Component Subtype="Computer" Count="5" />
+				<Component Subtype="Construction" Count="10" />
+				<Component Subtype="InteriorPlate" Count="10" />
+				<Component Subtype="SteelPlate" Count="30" />
+				<Component Subtype="SteelPlate" Count="10" />
+			</Components>
+			<CriticalComponent Subtype="SteelPlate" Index="0" />
+			<MountPoints>
+              <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+              <MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			</MountPoints>
+			<BlockPairName>PassageSciFiWallEncOffset</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<PCU>10</PCU>
+			<DLC>Warfare1</DLC>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>PassageSciFiLeftPillarEncOffset</SubtypeId>
+			</Id>
+			<DisplayName>Passage 3 Left Pillar Wall Enclosed Offset</DisplayName>
+			<Icon>Textures\Icons\PassageSciFiLeftPillarEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage3E\PassageSciFiLeftPillarOffset.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+              <MountPoint Side="Front" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>PassageSciFiLeftPillarEncOffset</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>PassageSciFiRightPillarEncOffset</SubtypeId>
+			</Id>
+			<DisplayName>Passage 3 Right Pillar Wall Enclosed Offset</DisplayName>
+			<Icon>Textures\Icons\PassageSciFiRightPillarEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage3E\PassageSciFiRightPillarOffset.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+              <MountPoint Side="Front" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>PassageSciFiRightPillarEncOffset</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>PassageSciFiPillarEncOffset</SubtypeId>
+			</Id>
+			<DisplayName>Passage 3 Pillar Enclosed Offset</DisplayName>
+			<Icon>Textures\Icons\PassageSciFiPillarEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage3E\PassageSciFiPillarOffset.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+              <MountPoint Side="Front" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>PassageSciFiPillarEncOffset</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>PassageSciFi2PillarWallEncOffset</SubtypeId>
+			</Id>
+			<DisplayName>Passage 3 Two Pillars Enclosed Offset</DisplayName>
+			<Icon>Textures\Icons\PassageSciFi2PillarEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage3E\PassageSciFi2PillarWallOffset.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+              <MountPoint Side="Front" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>PassageSciFi2PillarWallEncOffset</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>PassageSciFi3PillarWallEncOffset</SubtypeId>
+			</Id>
+			<DisplayName>Passage 3 Three Pillars Enclosed Offset</DisplayName>
+			<Icon>Textures\Icons\PassageSciFi3PillarEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage3E\PassageSciFi3PillarWallOffset.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+              <MountPoint Side="Front" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>PassageSciFi3PillarWallEncOffset</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>PassageSciFiRoofEncOffset</SubtypeId>
+			</Id>
+			<DisplayName>Passage 3 Roof Enclosed Offset</DisplayName>
+			<Icon>Textures\Icons\PassageSciFiRoofEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage3E\PassageSciFiRoofOffset.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+              <MountPoint Side="Front" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>PassageSciFiRoofEncOffset</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>PassageSciFiFloorEncOffset</SubtypeId>
+			</Id>
+			<DisplayName>Passage 3 Floor Offset</DisplayName>
+			<Icon>Textures\Icons\PassageSciFiRoofEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage3E\PassageSciFiFloorOffset.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+              <MountPoint Side="Front" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>PassageSciFiFloorEncOffset</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>PassageSciFiWallCornerEncOffset</SubtypeId>
+			</Id>
+			<DisplayName>Passage 3 Wall Corner Enclosed Offset</DisplayName>
+			<Icon>Textures\Icons\PassageSciFiCornerWallEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage3E\PassageSciFiWallCornerOffset.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+              <MountPoint Side="Back" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+              <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>PassageSciFiWallCornerEncOffset</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>18</BuildTimeSeconds>
+			<GuiVisible>false</GuiVisible>
+			<PCU>1</PCU>
+		</Definition>
+		
+		<Definition  xsi:type="MyObjectBuilder_LightingBlockDefinition">
+		  <Id>
+			<TypeId>InteriorLight</TypeId>
+			<SubtypeId>PassageSciFiRoofLightEncOffset</SubtypeId>
+			</Id>
+			<DisplayName>Passage 3 Roof Light Enclosed Offset</DisplayName>
+			<Icon>Textures\Icons\PassageSciFiRoofLightedEnc.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Passage3E\PassageSciFiRoofLightOffset.mwm</Model>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="50" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="SmallTube" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="Construction" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Back" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Left" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Right" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+              <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+              <MountPoint Side="Front" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.9" StartY="0" EndX="1" EndY="1" />
+              <MountPoint Side="Front" StartX="0.1" StartY="0.9" EndX="0.9" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+			</BuildProgressModels>
+			<BlockPairName>PassageSciFiRoofLightEncOffset</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<Flare>NoFlare</Flare>
+			<LightRadius Min="0.1" Max="10" Default="2.0" />
+			<LightFalloff Min="0.5" Max="2" Default="1.5" />
+			<LightIntensity Min="0.0" Max="5" Default="2.0" />
+			<RequiredPowerInput>0.00008</RequiredPowerInput>
+			<DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+			<DamagedSound>ParticleElectrical</DamagedSound>
+			<ResourceSourceGroup>Battery</ResourceSourceGroup>
+			<HasPhysics>true</HasPhysics>
+			<GuiVisible>false</GuiVisible>
+		  <BuildTimeSeconds>20</BuildTimeSeconds>
+		  <PCU>1</PCU>      
+		</Definition>
+	</CubeBlocks>
+</Definitions>

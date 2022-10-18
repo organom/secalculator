@@ -1,0 +1,829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- CubeBlocks -->  
+  <CubeBlocks>
+  
+    <!-- X-LargeAirtightHangarDoor -->
+    <Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+      <Id>
+        <TypeId>AdvancedDoor</TypeId>
+        <SubtypeId>X-LargeAirtightHangarDoor</SubtypeId>
+      </Id>
+      <DisplayName>{LOC:DisplayName_XLargeAirtightHangarDoor}</DisplayName>
+      <Icon>Textures\GUI\HangarGate\X-LargeHangarGate.dds</Icon>
+      <Description>{LOC:Description_XLargeHangarDoor}</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="8" z="3" />
+      <ModelOffset x="0" y="-6.25" z="0" />
+      <Center x="0" y="0" z="1" />
+      <Model>Models\Cubes\Large\LargeHangarbase.mwm</Model>
+      <DeformationRatio>0.4</DeformationRatio>
+      <UsesDeformation>false</UsesDeformation>
+      <Sound>BlockDoorHangar</Sound>
+      <Components>
+        <Component Subtype="SteelPlate" Count="1350" />
+        <Component Subtype="Construction" Count="90" />
+        <Component Subtype="SmallTube" Count="240" />
+        <Component Subtype="Motor" Count="384" />
+        <Component Subtype="Computer" Count="12" />
+        <Component Subtype="Construction" Count="150" />
+        <Component Subtype="SteelPlate" Count="600" />
+     </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="2"/>
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="2"/>
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="3" EndY="2"/>
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="3" EndY="2"/>
+        <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="3" Enabled="false" PressurizedWhenOpen="false"/>
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="3" Default="true"/>
+		
+        <MountPoint Side="Front" StartX="0" StartY="2" EndX="1" EndY="8" Enabled="false" PressurizedWhenOpen="false"/>
+        <MountPoint Side="Back" StartX="0" StartY="2" EndX="1" EndY="8" Enabled="false" PressurizedWhenOpen="false"/>
+        <MountPoint Side="Left" StartX="0" StartY="2" EndX="3" EndY="8" Enabled="false" PressurizedWhenOpen="false"/>
+        <MountPoint Side="Right" StartX="0" StartY="2" EndX="3" EndY="8" Enabled="false" PressurizedWhenOpen="false"/>
+      </MountPoints>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\LargeHangarbase_BS1.mwm"/>
+        <Model BuildPercentUpperBound="0.67" File="Models\Cubes\Large\LargeHangarbase_BS2.mwm"/>
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\LargeHangarbase_BS3.mwm"/>
+      </BuildProgressModels>
+      <BlockPairName>X-LargeAirtightHangarDoor</BlockPairName>
+      <EmissiveColorPreset>Extended</EmissiveColorPreset>
+      <MirroringX>Y</MirroringX>
+      <MirroringY>X</MirroringY>
+      <EdgeType>Light</EdgeType>
+      <IsAirTight>true</IsAirTight>
+      <BuildTimeSeconds>218</BuildTimeSeconds>
+      <DisassembleRatio>0.8</DisassembleRatio> 
+      <GeneralDamageMultiplier>0.555</GeneralDamageMultiplier>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+      <PowerConsumptionMoving>0.008</PowerConsumptionMoving>
+      <DamageEffectId>212</DamageEffectId>
+    
+     <Subparts>
+      <SubpartDefinition>
+          <Name>LargeHangarCoverFront</Name>  <!-- ID: 0 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarCoverBack</Name>  <!-- ID: 1 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarSliderFront</Name>  <!-- ID: 2 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate1</Name>  <!-- ID: 3 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate1Roll</Name>  <!-- ID: 4 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate2</Name>  <!-- ID: 5 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate2CoverA</Name>  <!-- ID: 6 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate2CoverB</Name>  <!-- ID: 7 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate2Roll</Name>  <!-- ID: 8 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate3</Name>  <!-- ID: 9 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate3CoverA</Name>  <!-- ID: 10 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate3CoverB</Name>  <!-- ID: 11 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate3Roll</Name>  <!-- ID: 12 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate4</Name>  <!-- ID: 13 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate4CoverA</Name>  <!-- ID: 14 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>LargeHangarGate4CoverB</Name>  <!-- ID: 15 -->
+        </SubpartDefinition>
+      </Subparts>
+  
+      <OpeningSequence>
+        <!-- Sliding Gate Covers -->
+      <Opening>     
+        <IDs>6,10,14</IDs> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="0" z="1" />
+        <MaxOpen>0.4</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>3</Speed>
+        <OpenDelay>0</OpenDelay>
+           <CloseDelay>15.5</CloseDelay>
+           <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+
+      <Opening>
+        <IDs>7,11,15</IDs> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="0" z="-1" />
+        <MaxOpen>0.4</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>3</Speed>
+        <OpenDelay>0</OpenDelay>
+           <CloseDelay>15.5</CloseDelay>
+           <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+    
+      <!-- Gate Opening Sequence -->
+      <!-- Gate Sliding down/up -->
+    
+      <Opening>
+        <IDs>3,4</IDs>  <!-- Gate 1 --> 
+      <Move>Slide</Move>
+      <SlideDirection x="0" y="-1" z="0" />
+      <MaxOpen>3.44</MaxOpen>
+      <InvertRotation>true</InvertRotation>
+      <Speed>1</Speed>
+       <OpenDelay>0.5</OpenDelay>
+           <CloseDelay>0</CloseDelay>
+           <OpenSound>BlockDoorHangar</OpenSound>
+      <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+    
+      <Opening>
+          <IDs>5,6,7,8</IDs>   <!-- Gate 2 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="-1" z="0" />
+        <MaxOpen>7.38</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>1</Speed>
+        <OpenDelay>0.5</OpenDelay>
+           <CloseDelay>0</CloseDelay>
+           <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+    
+      <Opening>
+       <IDs>9,10,11,12</IDs>   <!-- Gate 3 --> 
+       <Move>Slide</Move>
+       <SlideDirection x="0" y="-1" z="0" />
+       <MaxOpen>11.32</MaxOpen>
+       <InvertRotation>true</InvertRotation>
+       <Speed>1</Speed>
+         <OpenDelay>0.5</OpenDelay>
+           <CloseDelay>0</CloseDelay>
+           <OpenSound>BlockDoorHangar</OpenSound>
+       <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+    
+      <Opening>
+        <IDs>13,14,15</IDs>   <!-- Gate 4 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="-1" z="0" />
+        <MaxOpen>15.02</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>1</Speed>
+         <OpenDelay>0.5</OpenDelay>
+             <CloseDelay>0</CloseDelay>
+             <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+      
+       <!-- gatedoors moving forvard -->
+     
+      <Opening>
+        <IDs>5,6,7,8,9,10,11,12,13,14,15</IDs>   <!-- Gate 2 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="-1" y="0" z="0" />
+        <MaxOpen>0.365</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>0.6</Speed>
+         <OpenDelay>3.64</OpenDelay>
+             <CloseDelay>7.13</CloseDelay>
+             <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+          
+      <Opening>
+        <IDs>9,10,11,12,13,14,15</IDs>   <!-- Gate 3 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="-1" y="0" z="0" />
+        <MaxOpen>0.365</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>0.6</Speed>
+         <OpenDelay>7.5</OpenDelay>
+             <CloseDelay>11.1</CloseDelay>
+             <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+      
+      <Opening>
+        <IDs>13,14,15</IDs>   <!-- Gate 4 -->  
+        <Move>Slide</Move>
+        <SlideDirection x="-1" y="0" z="0" />
+        <MaxOpen>0.365</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>0.6</Speed>
+         <OpenDelay>11.4</OpenDelay>
+             <CloseDelay>15.1</CloseDelay>
+             <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+      
+      <!-- Rolls rotating -->
+        <Opening>
+        <IDs>4</IDs>   <!-- Gate 1-->
+        <Move>Rotate</Move>
+        <RotationAxis>Z</RotationAxis>
+        <MaxOpen>2080</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>500</Speed>
+         <OpenDelay>3.84</OpenDelay>
+             <CloseDelay>3.24</CloseDelay>
+            <PivotPosition x="0.44" y="4.24" z="0" />
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+      
+      <Opening>
+        <IDs>8</IDs>   <!-- Gate 2-->
+        <Move>Rotate</Move>
+        <RotationAxis>Z</RotationAxis>
+        <MaxOpen>2080</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>500</Speed>
+         <OpenDelay>7.38</OpenDelay>
+             <CloseDelay>7.38</CloseDelay>
+            <PivotPosition x="0.44" y="8.18" z="0" />
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+      
+      <Opening>
+        <IDs>12</IDs>   <!-- Gate 3-->
+        <Move>Rotate</Move>
+        <RotationAxis>Z</RotationAxis>
+        <MaxOpen>2080</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>500</Speed>
+         <OpenDelay>11.32</OpenDelay>
+             <CloseDelay>11.32</CloseDelay>
+            <PivotPosition x="0.44" y="12.12" z="0" />
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+      
+     <!-- Hangar Cover animation sequence -->
+      <Opening>
+        <IDs>0</IDs> 
+        <Move>Rotate</Move>
+        <RotationAxis>Z</RotationAxis>
+        <MaxOpen>-80</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>180</Speed>
+         <OpenDelay>15.2</OpenDelay>
+             <CloseDelay>0.1</CloseDelay>
+            <PivotPosition x="0.9" y="0.56" z="0" />
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+      
+      <Opening>
+        <IDs>1</IDs> 
+        <Move>Rotate</Move>
+        <RotationAxis>Z</RotationAxis>
+        <MaxOpen>90</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>180</Speed>
+         <OpenDelay>15</OpenDelay>
+             <CloseDelay>0.3</CloseDelay>
+            <PivotPosition x="-0.9" y="1.16" z="0" />
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+      
+      <Opening>
+        <IDs>2</IDs> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>0.5</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>0.8</Speed>
+         <OpenDelay>15.1</OpenDelay>
+             <CloseDelay>0.1</CloseDelay>
+             <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+      
+      <Opening>
+        <IDs>0,2</IDs> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>0.6</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>1</Speed>
+         <OpenDelay>6</OpenDelay>
+             <CloseDelay>0.5</CloseDelay>
+             <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+      
+      <Opening>
+        <IDs>1</IDs> 
+        <Move>Rotate</Move>
+        <RotationAxis>Z</RotationAxis>
+        <MaxOpen>-90</MaxOpen>
+        <InvertRotation>true</InvertRotation>
+        <Speed>180</Speed>
+         <OpenDelay>1</OpenDelay>
+             <CloseDelay>6</CloseDelay>
+            <PivotPosition x="-0.9" y="1.16" z="0" />
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+      </OpeningSequence>   
+      <PCU>230</PCU>      
+    
+    </Definition>
+
+    <!-- HugeHangarGate_Base -->
+    <Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+      <Id>
+        <TypeId>AdvancedDoor</TypeId>
+		    <SubtypeId>HugeHangarGate_Base</SubtypeId>
+      </Id>
+      <DisplayName>{LOC:DisplayName_Huge_Hangargate}</DisplayName>
+      <Icon>Textures\GUI\HangarGate\HugeHangarGate.dds</Icon>
+      <Description>{LOC:Description_HugeHangarDoor}</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="6" y="15" z="3" />
+      <ModelOffset x="0" y="-15" z="0" />
+      <Center x="3" y="15" z="1" />
+      <Model>Models\Cubes\Large\HugeHangarGate_Base.mwm</Model>
+      <DeformationRatio>0.4</DeformationRatio>
+      <UsesDeformation>false</UsesDeformation>
+      <Sound>BlockDoorHangar</Sound>
+      <Components>
+        <Component Subtype="SteelPlate" Count="8100" />
+        <Component Subtype="Construction" Count="540" />
+        <Component Subtype="SmallTube" Count="1440" />
+        <Component Subtype="MetalGrid" Count="540" />
+        <Component Subtype="Motor" Count="360" />
+        <Component Subtype="Superconductor" Count="250" />
+        <Component Subtype="PowerCell" Count="40" />
+        <Component Subtype="Computer" Count="72" />
+        <Component Subtype="Construction" Count="900" />
+        <Component Subtype="SteelPlate" Count="3600" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Front" StartX="4" StartY="0" EndX="6" EndY="3" Enabled="false"/>
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="2" EndY="3" Enabled="false"/>
+				<MountPoint Side="Front" StartX="0" StartY="3" EndX="6" EndY="15" Enabled="false" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Front" StartX="2" StartY="0" EndX="4" EndY="3"/>
+				<MountPoint Side="Back" StartX="0" StartY="3" EndX="6" EndY="15" Enabled="false" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Back" StartX="2" StartY="0" EndX="4" EndY="3"/>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="2" EndY="3" Enabled="false"/>
+				<MountPoint Side="Back" StartX="4" StartY="0" EndX="6" EndY="3" Enabled="false"/>
+				<MountPoint Side="Left" StartX="0" StartY="3" EndX="3" EndY="15" Enabled="false" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Left" StartX="0.65" StartY="0" EndX="2.35" EndY="3"/>
+				<MountPoint Side="Left" StartX="2.35" StartY="0" EndX="3" EndY="3" Enabled="false"/>
+				<MountPoint Side="Left" StartX="0" StartY="0" EndX="0.65" EndY="3" Enabled="false"/>
+				<MountPoint Side="Right" StartX="0" StartY="3" EndX="3" EndY="15" Enabled="false" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Right" StartX="0.65" StartY="0" EndX="2.35" EndY="3"/>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="0.65" EndY="3" Enabled="false"/>
+				<MountPoint Side="Right" StartX="2.35" StartY="0" EndX="3" EndY="3" Enabled="false"/>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="6" EndY="3" Enabled="false" PressurizedWhenOpen="false"/>
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="6" EndY="3" Default="true"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.20" File="Models\Cubes\large\HugeHangarGate_Base_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.40" File="Models\Cubes\large\HugeHangarGate_Base_BS2.mwm"/>
+				<Model BuildPercentUpperBound="0.60" File="Models\Cubes\large\HugeHangarGate_Base_BS3.mwm"/>
+				<Model BuildPercentUpperBound="0.80" File="Models\Cubes\large\HugeHangarGate_Base_BS4.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\HugeHangarGate_Base_BS5.mwm"/>
+			</BuildProgressModels>
+      <BlockPairName>HugeHangarGate_Base</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>436</BuildTimeSeconds>
+      <DisassembleRatio>0.7</DisassembleRatio> 
+      <GeneralDamageMultiplier>0.555</GeneralDamageMultiplier>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+      <PowerConsumptionMoving>0.016</PowerConsumptionMoving>
+      <EmissiveColorPreset>Extended</EmissiveColorPreset>
+      <PhysicalMaterial>Metal</PhysicalMaterial>
+
+
+     <Subparts>
+      <SubpartDefinition>
+          <Name>HangarDoorWindowed_door1</Name>  <!-- ID: 0 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>HangarDoor_door2</Name>  <!-- ID: 1 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>HangarDoor_door3</Name>  <!-- ID: 2 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>HangarDoor_door4</Name>  <!-- ID: 3 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>HangarDoor_door5</Name>  <!-- ID: 4 -->
+        </SubpartDefinition>
+      </Subparts>
+
+
+     <OpeningSequence>
+
+      <!-- Gate Sliding down/up -->    
+      <Opening>
+        <IDs>0</IDs>  <!-- Gate 1 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="-1" z="0" />
+        <MaxOpen>6</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>16</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+    
+      <Opening>
+          <IDs>1</IDs>   <!-- Gate 2 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="-1" z="0" />
+        <MaxOpen>12</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>12</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+    
+      <Opening>
+       <IDs>2</IDs>   <!-- Gate 3 --> 
+       <Move>Slide</Move>
+       <SlideDirection x="0" y="-1" z="0" />
+       <MaxOpen>18</MaxOpen>
+       <Speed>1.5</Speed>
+       <OpenDelay>8</OpenDelay>
+       <CloseDelay>0</CloseDelay>
+
+       <OpenSound>BlockDoorHangar</OpenSound>
+       <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+    
+      <Opening>
+        <IDs>3</IDs>   <!-- Gate 4 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="-1" z="0" />
+        <MaxOpen>24</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>4</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+	  
+      <Opening>
+        <IDs>4</IDs>   <!-- Gate 5 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="-1" z="0" />
+        <MaxOpen>30</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>0</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+     </OpeningSequence>
+     <PCU>230</PCU>     
+	  
+    </Definition>	
+		
+	
+    <!-- ExtremHugeHangarGate -->
+    <Definition xsi:type="MyObjectBuilder_AdvancedDoorDefinition">
+      <Id>
+        <TypeId>AdvancedDoor</TypeId>
+		    <SubtypeId>ExtremHugeHangarGate</SubtypeId>
+      </Id>
+      <DisplayName>{LOC:DisplayName_ExtremHugeHangarGate}</DisplayName>
+      <Icon>Textures\GUI\HangarGate\GiantHangarGate.dds</Icon>
+      <Description>{LOC:Description_GiantHangarGate}</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="9" y="22" z="5"/>
+      <ModelOffset x="0" y="-22" z="0" />
+      <Model>Models\Cubes\Large\ExtremeHugeHangarGate\ExtremHugeHangarGate.mwm</Model>
+      <DeformationRatio>0.4</DeformationRatio>
+      <UsesDeformation>false</UsesDeformation>
+      <Sound>BlockDoorHangar</Sound>
+      <Components>
+        <Component Subtype="SteelPlate" Count="20250" />
+        <Component Subtype="Construction" Count="1350" />
+        <Component Subtype="SmallTube" Count="3600" />
+        <Component Subtype="MetalGrid" Count="820" />
+        <Component Subtype="Motor" Count="456" />
+        <Component Subtype="Superconductor" Count="420" />
+        <Component Subtype="PowerCell" Count="100" />
+        <Component Subtype="Computer" Count="180" />
+        <Component Subtype="Construction" Count="2250" />
+        <Component Subtype="SteelPlate" Count="9000" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+		<BuildProgressModels>
+			<Model BuildPercentUpperBound="0.25" File="Models\Cubes\Large\ExtremeHugeHangarGate\ExtremHugeHangarGate_BS1.mwm"/>
+			<Model BuildPercentUpperBound="0.50" File="Models\Cubes\Large\ExtremeHugeHangarGate\ExtremHugeHangarGate_BS2.mwm"/>
+			<Model BuildPercentUpperBound="0.75" File="Models\Cubes\Large\ExtremeHugeHangarGate\ExtremHugeHangarGate_BS3.mwm"/>
+			<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\ExtremeHugeHangarGate\ExtremHugeHangarGate_BS4.mwm"/>
+		</BuildProgressModels>
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0" StartY="0" EndX="9" EndY="4"/>
+				<MountPoint Side="Front" StartX="0" StartY="4" EndX="9" EndY="22" Enabled="false"/>
+				<MountPoint Side="Back" StartX="0" StartY="0" EndX="9" EndY="4"/>
+				<MountPoint Side="Back" StartX="0" StartY="4" EndX="9" EndY="22" Enabled="false"/>
+				<MountPoint Side="Left" StartX="0" StartY="0" EndX="5" EndY="4"/>
+				<MountPoint Side="Left" StartX="0" StartY="4" EndX="5" EndY="22" Enabled="false"/>
+				<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="4"/>
+				<MountPoint Side="Right" StartX="0" StartY="4" EndX="5" EndY="22" Enabled="false"/>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="9" EndY="5" Enabled="false"/>
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="9" EndY="5" Default="true"/>
+			</MountPoints>
+      <BlockPairName>ExtremHugeHangarGate</BlockPairName>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>654</BuildTimeSeconds>
+      <DisassembleRatio>0.55</DisassembleRatio> 
+      <GeneralDamageMultiplier>0.5</GeneralDamageMultiplier>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <PowerConsumptionIdle>0.00001</PowerConsumptionIdle>
+      <PowerConsumptionMoving>0.03</PowerConsumptionMoving>
+      <EmissiveColorPreset>Extended</EmissiveColorPreset>
+			<MirroringY>Z</MirroringY>
+      <PhysicalMaterial>Metal</PhysicalMaterial>
+
+
+     <Subparts>
+      <SubpartDefinition>
+          <Name>Gate1</Name>  <!-- ID: 0 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate2</Name>  <!-- ID: 1 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate3</Name>  <!-- ID: 2 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate4</Name>  <!-- ID: 3 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate5</Name>  <!-- ID: 4 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate1_Rail</Name>  <!-- ID: 5 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate2_Rail</Name>  <!-- ID: 6 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate3_Rail</Name>  <!-- ID: 7 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate4_Rail</Name>  <!-- ID: 8 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate5_Rail</Name>  <!-- ID: 9 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate1_stabilizer</Name>  <!-- ID: 10 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate2_stabilizer</Name>  <!-- ID: 11 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate3_stabilizer</Name>  <!-- ID: 12 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate4_stabilizer</Name>  <!-- ID: 13 -->
+        </SubpartDefinition>
+      <SubpartDefinition>
+          <Name>Gate5_stabilizer</Name>  <!-- ID: 14 -->
+        </SubpartDefinition>
+      </Subparts>
+
+
+     <OpeningSequence>
+
+      <!-- Gate Sliding down/up -->    
+      <Opening>
+        <IDs>0</IDs>  <!-- Gate 1 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>9</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>24</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+    
+      <Opening>
+          <IDs>1</IDs>   <!-- Gate 2 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>18</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>18</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+    
+      <Opening>
+       <IDs>2</IDs>   <!-- Gate 3 --> 
+       <Move>Slide</Move>
+       <SlideDirection x="0" y="1" z="0" />
+       <MaxOpen>27</MaxOpen>
+       <Speed>1.5</Speed>
+       <OpenDelay>12</OpenDelay>
+       <CloseDelay>0</CloseDelay>
+
+       <OpenSound>BlockDoorHangar</OpenSound>
+       <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+    
+      <Opening>
+        <IDs>3</IDs>   <!-- Gate 4 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>36</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>6</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+	  
+      <Opening>
+        <IDs>4</IDs>   <!-- Gate 5 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>45</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>0</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+   
+   
+      <Opening>
+        <IDs>5</IDs>   <!-- Rail 1 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>5</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>26.6</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+    
+
+      <Opening>
+        <IDs>6</IDs>   <!-- Rail 2 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>14</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>20.6</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+
+	
+      <Opening>
+        <IDs>7</IDs>   <!-- Rail 3 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>23</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>14.6</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+
+	 
+      <Opening>
+        <IDs>8</IDs>   <!-- Rail 4 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>32</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>8.6</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+
+	 
+      <Opening>
+        <IDs>9</IDs>   <!-- Rail 5 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>41</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>2.6</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+
+
+      <Opening>
+        <IDs>10</IDs>  <!-- Stabilizer 1 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>7.4</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>25.062</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+	 
+      <Opening>
+        <IDs>11</IDs>  <!-- Stabilizer 2 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>14.8</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>20.129</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+	  
+      <Opening>
+        <IDs>12</IDs>  <!-- Stabilizer 3 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>22.2</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>15.196</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+	  
+      <Opening>
+        <IDs>13</IDs>  <!-- Stabilizer 4 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>29.6</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>10.263</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+	  
+      <Opening>
+        <IDs>14</IDs>  <!-- Stabilizer 5 --> 
+        <Move>Slide</Move>
+        <SlideDirection x="0" y="1" z="0" />
+        <MaxOpen>37</MaxOpen>
+        <Speed>1.5</Speed>
+        <OpenDelay>5.33</OpenDelay>
+        <CloseDelay>0</CloseDelay>
+        <OpenSound>BlockDoorHangar</OpenSound>
+        <CloseSound>BlockDoorHangar</CloseSound>
+      </Opening>
+     </OpeningSequence> 
+     <PCU>230</PCU>  
+	  
+    </Definition>	
+	
+  </CubeBlocks>
+</Definitions>
