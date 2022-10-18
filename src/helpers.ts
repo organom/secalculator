@@ -1,5 +1,5 @@
 import {XMLParser} from 'fast-xml-parser';
-import {collectionDefinition, SE_ITEMS} from './config';
+import {collectionDefinition, SE_COLLECTIONS, SE_ITEMS, VANILLA_ID} from './config';
 import axios from 'axios';
 
 export async function parseSBCFile(content: Blob | File) : Promise<any> {
@@ -27,7 +27,23 @@ export async function loadSBCFiles(filesPath: string, files: string[]) {
 	return results.flat();
 }
 
-export async function loadCollection(collection: collectionDefinition, existingComponents: any[] = [], existingCubeBlocks: any[] = []) {
+
+export async function loadVanilla() {
+	const collection = SE_COLLECTIONS.filter(t => t.id === VANILLA_ID)[0];
+	const items = SE_ITEMS.filter(x => collection.itemIds.includes(x.id));
+
+	// CubeBlocks
+	const loadedBlocks = await Promise.all(items.map(x => x.cubeBlockFiles?.length > 0 ? loadSBCFiles(collection.downloadBaseUrl, x.cubeBlockFiles) : undefined).filter(x => x));
+	const newBlocks = loadedBlocks.flat();
+
+	// Components
+	const loadedComponents = await Promise.all(items.map(x => x.componentFiles?.length > 0 ? loadSBCFiles(collection.downloadBaseUrl, x.componentFiles) : undefined).filter(x => x));
+	const newComponents = loadedComponents.flat();
+
+	return {cubeBlocks: newBlocks, components: newComponents};
+}
+
+export async function loadCollection(collection: collectionDefinition, existingComponents: any[], existingCubeBlocks: any[]) {
 	const items = SE_ITEMS.filter(x => collection.itemIds.includes(x.id));
 
 	// CubeBlocks

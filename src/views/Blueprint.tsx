@@ -91,7 +91,7 @@ export default function Blueprint(props: { blocks: any[], components: any[] }) {
 	return (
 		<div>
 			<Stack direction="vertical" gap={2}>
-				<div className="m-5">
+				<div className="m-3">
 					<label className="mx-3">Choose file:</label>
 					<input ref={inputRef} onChange={handleDisplayFileDetails} className="d-none" type="file" />
 					<button onClick={handleUpload} className="btn btn-outline-primary">Upload Blueprint</button>
