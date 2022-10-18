@@ -1,6 +1,6 @@
 import {Stack} from 'react-bootstrap';
 import React, {useRef, useState} from 'react';
-import {parseSBCFile} from '../Helpers';
+import {parseSBCFile} from '../helpers';
 
 interface BlueprintData {
 	Id: { '@_Subtype': string };
