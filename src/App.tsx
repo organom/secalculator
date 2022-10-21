@@ -38,7 +38,12 @@ export default function App() {
 		<div>
 			<Navbar collapseOnSelect bg='dark' variant='dark' fixed='top' expand='md' className="ps-3">
 				<Container fluid>
-					<Navbar.Brand><Nav.Link href="/secalculator/">SeCalculator</Nav.Link></Navbar.Brand>
+					<Navbar.Brand><Nav.Link href="/secalculator/"><img
+						alt=""
+						src="/secalculator/SECalculator.png"
+						height="20"
+						className="d-inline-block align-middle"
+					/></Nav.Link></Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbar-collapse" />
 					{!loading &&
 						<Navbar.Collapse id="navbar-collapse">
@@ -59,9 +64,9 @@ export default function App() {
 								</NavDropdown>
 							</Nav>
 							<Nav>
-								<Nav.Link><NavLink className="text-light" to="blueprint">Blueprint</NavLink></Nav.Link>
-								<Nav.Link><NavLink className="text-light" to='blocks'>Blocks</NavLink></Nav.Link>
-								<Nav.Link><NavLink className="text-light" to='components'>Components</NavLink></Nav.Link>
+								<Nav.Link><NavLink className="text-light text-decoration-none" to="blueprint">Blueprint</NavLink></Nav.Link>
+								<Nav.Link><NavLink className="text-light text-decoration-none" to='blocks'>Blocks</NavLink></Nav.Link>
+								<Nav.Link><NavLink className="text-light text-decoration-none" to='components'>Components</NavLink></Nav.Link>
 								<Nav.Link className="text-light" href='https://github.com/organom/secalculator'><i className="bi bi-github me-3"/></Nav.Link>
 							</Nav>
 						</Navbar.Collapse>
