@@ -29,6 +29,10 @@ function ensureArray(element: any | any[]): any[] {
 	return Array.isArray(element) ? element : [element];
 }
 
+function print(a: GridCount) {
+	return a.subtype || a.type;
+}
+
 export default function Blueprint(props: { blocks: any[], components: any[] }) {
 	const [blueprintFileName, setBlueprintFileName] = useState<string | undefined>();
 	const [blueprint, setBlueprint] = useState<BlueprintData>();
@@ -113,11 +117,11 @@ export default function Blueprint(props: { blocks: any[], components: any[] }) {
 							<Stack direction={'horizontal'} gap={5} className="mt-4 align-items-md-start">
 								<div>
 									<h4>Blocks:</h4>
-									{ grid.BlocksCount.map(block => <div key={block.subtype || block.type}>{block.count} x {block.subtype || block.type}</div>) }
+									{ grid.BlocksCount.sort((a,b) => print(a).localeCompare(print(b))).map(block => <div key={print(block)}>{block.count} x {print(block)}</div>) }
 								</div>
 								<div>
 									<h4>Components required:</h4>
-									{ grid.ComponentsCount.map(comp => <div key={comp.subtype || comp.type}>{comp.count} x {comp.subtype || comp.type}</div>) }
+									{ grid.ComponentsCount.sort((a,b) =>  print(a).localeCompare(print(b))).map(comp => <div key={print(comp)}>{comp.count} x {print(comp)}</div>) }
 								</div>
 							</Stack>
 						</div>
