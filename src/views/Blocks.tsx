@@ -20,8 +20,8 @@ export default function Blocks(props: { blocks: any[] }) {
 		{ name: 'PCU', header: 'PCU', type: 'number', filterEditor: NumberFilter, minWidth: 20, defaultFlex: 1 },
 		{ name: 'BuildTimeSeconds', header: 'Build(sec)', type: 'number', filterEditor: NumberFilter, minWidth: 20, defaultFlex: 1 },
 		{ name: 'RequiredPowerInput', header: 'Power', type: 'number', filterEditor: NumberFilter, minWidth: 20, defaultFlex: 1 },
-		{ name: 'IsPressurized', header: 'Pressurized', sortable: false, minWidth: 20, defaultFlex: 1, type: 'boolean', filterEditor: BoolFilter, render: ({ value }) => value ? 'yes' : 'no' },
-		{ name: 'IsAirTight', header: 'AirTight', sortable: false, minWidth: 20, defaultFlex: 1, type: 'boolean', filterEditor: BoolFilter, render: ({ value }) => value ? 'yes' : 'no' },
+		{ name: 'IsPressurized', header: 'Pressurized', sortable: false, minWidth: 20, defaultFlex: 1, type: 'boolean', filterEditor: BoolFilter, render: ({ value }) => value === undefined ? '-' : (value ? 'yes' : 'no') },
+		{ name: 'IsAirTight', header: 'AirTight', sortable: false, minWidth: 20, defaultFlex: 1, type: 'boolean', filterEditor: BoolFilter, render: ({ value }) =>  value === undefined ? '-' : (value ? 'yes' : 'no') },
 		{ name: 'DLC', header: 'DLC', minWidth: 20,  defaultFlex: 1 }
 	]
 	const filterValue: TypeFilterValue = [
@@ -29,9 +29,9 @@ export default function Blocks(props: { blocks: any[] }) {
 		{ name: 'Id.TypeId', operator: 'contains', type: 'string', value: '', fn: ({ value, filterValue, data }) => data.Id.TypeId.toLowerCase().includes(filterValue.toLowerCase()) },
 		{ name: 'DisplayName', operator: 'contains', type: 'string', value: ''},
 		{ name: 'CubeSize', operator: 'startsWith', type: 'string', value: '' },
-		{ name: 'PCU', operator: 'gte', type: 'number', value: number.emptyValue },
-		{ name: 'BuildTimeSeconds', operator: 'gte', type: 'number', value: number.emptyValue },
-		{ name: 'RequiredPowerInput', operator: 'gte', type: 'number', value: number.emptyValue },
+		{ name: 'PCU', operator: 'eq', type: 'number', value: number.emptyValue },
+		{ name: 'BuildTimeSeconds', operator: 'eq', type: 'number', value: number.emptyValue },
+		{ name: 'RequiredPowerInput', operator: 'eq', type: 'number', value: number.emptyValue },
 		{ name: 'IsPressurized', operator: 'eq', type: 'boolean', value: bool.emptyValue },
 		{ name: 'IsAirTight', operator: 'eq', type: 'boolean', value: bool.emptyValue },
 		{ name: 'DLC', operator: 'startsWith', type: 'string', value: '' },
