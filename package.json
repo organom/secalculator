@@ -33,7 +33,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.3.0",
     "eslint-plugin-promise": "^6.1.0",
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^5.0.0"
   },
   "scripts": {
     "predeploy": "npm run build",
